@@ -10,7 +10,6 @@ export const WeightFrom = () => {
   const green = "#11B003";
   const red = "#F94444";
 
-
   return (
     <div>
       <input
@@ -20,8 +19,12 @@ export const WeightFrom = () => {
         onChange={(event) => setPunds(Number(event.target.value))}
       />
       <WeightOutput jednostka={punds * 453.59237} label={grams} color={blue} />
-      <WeightOutput jednostka={punds } label={kilograms} color={green} />
-      <WeightOutput jednostka={punds} label={ounces} color={red} />
+      <WeightOutput
+        jednostka={punds * 0.4535927}
+        label={kilograms}
+        color={green}
+      />
+      <WeightOutput jednostka={punds * 16} label={ounces} color={red} />
     </div>
   );
 };
