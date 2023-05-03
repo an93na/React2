@@ -20,9 +20,13 @@ export const DistanceFrom = () => {
         value={milaMorska}
         onChange={(event) => setMilaMorska(Number(event.target.value))}
       />
-      <DistanceOutput odl={milaMorska*1852} label={meter} color={blue} />
-      <DistanceOutput odl={milaMorska*1.852} label={kilometer} color={green} />
-      <DistanceOutput odl={milaMorska*0.54} label={wezel} color={red} />
+      <DistanceOutput odl={milaMorska * 1852} label={meter} color={blue} />
+      <DistanceOutput
+        odl={milaMorska * 1.852}
+        label={kilometer}
+        color={green}
+      />
+      <DistanceOutput odl={milaMorska * 0.54} label={wezel} color={red} />
     </div>
   );
 };
