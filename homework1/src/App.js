@@ -3,9 +3,9 @@ import "@picocss/pico";
 
 function App() {
   return (
-    <article className="App">
+    <div className="App">
 
-    </article>
+    </div>
   );
 }
 
