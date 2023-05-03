@@ -14,9 +14,9 @@ export const DistanceFrom = () => {
 
   return (
     <div>
+      <h4>{milaMorska}</h4>
       <input
-        type="text"
-        placeholder="Enter mila morska"
+        type="range"
         value={milaMorska}
         onChange={(event) => setMilaMorska(Number(event.target.value))}
       />
