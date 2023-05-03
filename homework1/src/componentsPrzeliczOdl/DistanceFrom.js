@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
 
 
 export const DistanceFrom = () => {
-    return <div></div>
+    const [foot, setFoot] = useState('')
+
+    return <div>
+        <input type="text" placeholder="Enter foot" value={foot} onChange={(event)=>setFoot(Number(event.target.value))}/>
+    </div>
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import { DistanceFrom } from "./DistanceFrom";
 
 export const AppTitleDist = () => {
   return (
@@ -6,6 +7,7 @@ export const AppTitleDist = () => {
       <div>
         <h3>Distance Converter</h3>
       </div>
+      <DistanceFrom />
     </article>
   );
 };
