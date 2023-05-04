@@ -14,7 +14,7 @@ export const DistanceFrom = () => {
 
   return (
     <div>
-      <h4>{milaMorska}</h4>
+      <h4>{`nautical mile: ${milaMorska}`}</h4>
       <input
         type="range"
         value={milaMorska}
