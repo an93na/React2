@@ -3,12 +3,6 @@ import { WeightOutput } from "./WeightOutput";
 
 export const WeightFrom = (props) => {
   const [punds, setPunds] = useState("");
-  const grams = "Grams";
-  const kilograms = "Kilograms";
-  const ounces = "Ounces";
-  const blue = "#4C49D4";
-  const green = "#11B003";
-  const red = "#F94444";
 
   return (
     <div>
@@ -18,13 +12,13 @@ export const WeightFrom = (props) => {
         value={punds}
         onChange={(event) => setPunds(Number(event.target.value))}
       />
-      <WeightOutput jednostka={punds * 453.59237} label={grams} color={blue} />
+      <WeightOutput jednostka={punds * 453.59237} label={props.grams} color={props.blue} />
       <WeightOutput
         jednostka={punds * 0.4535927}
-        label={kilograms}
-        color={green}
+        label={props.kilograms}
+        color={props.green}
       />
-      <WeightOutput jednostka={punds * 16} label={ounces} color={red} />
+      <WeightOutput jednostka={punds * 16} label={props.ounces} color={props.red} />
     </div>
   );
 };
