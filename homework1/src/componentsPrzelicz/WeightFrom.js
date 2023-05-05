@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { WeightOutput } from "./WeightOutput";
 
-export const WeightFrom = () => {
+export const WeightFrom = (props) => {
   const [punds, setPunds] = useState("");
   const grams = "Grams";
   const kilograms = "Kilograms";
