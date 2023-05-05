@@ -61,31 +61,34 @@ function App() {
   const [searchPhrase, setSearchPhrase] = useState("");
 
   const handleSearchPhraseChange = (searchPhraseInput) => {
-    setSearchPhrase(searchPhraseInput)
+    setSearchPhrase(searchPhraseInput);
   };
 
   const getFilteredUsers = () => {
-    return users.filter(({name, lastName, address}) => {
-      if(!searchPhrase) {
-        return true
+    return users.filter(({ name, lastName, address }) => {
+      if (!searchPhrase) {
+        return true;
       }
       return (
         name.toLocaleLowerCase().includes(searchPhrase) ||
         lastName.toLocaleLowerCase().includes(searchPhrase) ||
         address.city.toLocaleLowerCase().includes(searchPhrase) ||
         address.country.toLocaleLowerCase().includes(searchPhrase) ||
-        
         name.toLocaleUpperCase().includes(searchPhrase) ||
         lastName.toLocaleUpperCase().includes(searchPhrase) ||
         address.city.toLocaleUpperCase().includes(searchPhrase) ||
-        address.country.toLocaleUpperCase().includes(searchPhrase)||
-        
-        (name.charAt(0).toUpperCase()+name.slice(1)).includes(searchPhrase) ||
-        (lastName.charAt(0).toUpperCase()+lastName.slice(1)).includes(searchPhrase) ||
-        (address.city.charAt(0).toUpperCase()+address.city.slice(1)).includes(searchPhrase) ||
-        (address.country.charAt(0).toUpperCase()+address.country.slice(1)).includes(searchPhrase)
-
-      )
+        address.country.toLocaleUpperCase().includes(searchPhrase) ||
+        (name.charAt(0).toUpperCase() + name.slice(1)).includes(searchPhrase) ||
+        (lastName.charAt(0).toUpperCase() + lastName.slice(1)).includes(
+          searchPhrase
+        ) ||
+        (address.city.charAt(0).toUpperCase() + address.city.slice(1)).includes(
+          searchPhrase
+        ) ||
+        (
+          address.country.charAt(0).toUpperCase() + address.country.slice(1)
+        ).includes(searchPhrase)
+      );
     });
   };
 
@@ -94,7 +97,7 @@ function App() {
   return (
     <div className="container">
       <Header onSearchPhraseChange={handleSearchPhraseChange} />
-      <UsersList users={usersToDisplay} />
+      <UsersList users={usersToDisplay}/>
     </div>
   );
 }
