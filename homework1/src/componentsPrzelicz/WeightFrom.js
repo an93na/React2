@@ -12,13 +12,21 @@ export const WeightFrom = (props) => {
         value={punds}
         onChange={(event) => setPunds(Number(event.target.value))}
       />
-      <WeightOutput jednostka={punds * 453.59237} label={props.grams} color={props.blue} />
+      <WeightOutput
+        jednostka={punds * 453.59237}
+        label={props.grams}
+        color={props.blue}
+      />
       <WeightOutput
         jednostka={punds * 0.4535927}
         label={props.kilograms}
         color={props.green}
       />
-      <WeightOutput jednostka={punds * 16} label={props.ounces} color={props.red} />
+      <WeightOutput
+        jednostka={punds * 16}
+        label={props.ounces}
+        color={props.red}
+      />
     </div>
   );
 };
