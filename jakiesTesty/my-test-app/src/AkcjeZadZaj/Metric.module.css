@@ -1,0 +1,38 @@
+.outerContainer {
+  background-color: rgb(215, 143, 10);
+  border-radius: 10px;
+  padding-top: 35px;
+  width: 200px;
+}
+
+.innerContainer {
+  background-color: rgb(17, 4, 97);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.output {
+  font-size: 34px;
+  color: white;
+  margin-bottom: 10px;
+  font-weight: 300;
+}
+
+.lastWeekOutput {
+  font-size: 12px;
+  color: #ffffffee;
+  margin-bottom: 10px;
+}
+
+/*
+  TODO: dodaj kolory do belek górnych zgodne z designem 
+*/
