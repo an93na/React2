@@ -25,10 +25,11 @@ export const UsersListItem = (props) => {
         }}
         onClick={() => {
           // console.table(props.users)
-          props.users.filter((userToDelete) => {
+          const newList = props.users.filter((userToDelete) => {
             // console.log(userToDelete.id)
             return userToDelete.id !== user.id;
           })
+          props.setUsers(newList);
         }}
       >
         usun

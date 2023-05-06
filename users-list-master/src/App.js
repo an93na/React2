@@ -57,7 +57,7 @@ const USERS = [
 ];
 
 function App() {
-  const [users] = useState(USERS);
+  const [users, setUsers] = useState(USERS);
   const [searchPhrase, setSearchPhrase] = useState("");
 
   const handleSearchPhraseChange = (searchPhraseInput) => {
@@ -97,7 +97,7 @@ function App() {
   return (
     <div className="container">
       <Header onSearchPhraseChange={handleSearchPhraseChange} />
-      <UsersList users={usersToDisplay}/>
+      <UsersList users={usersToDisplay} setUsers={setUsers}/>
     </div>
   );
 }
