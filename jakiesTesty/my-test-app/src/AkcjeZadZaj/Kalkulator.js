@@ -19,7 +19,7 @@ export const Kalkulator = () => {
   }
   const wynik = dajWynik(number1, number2, operation);
   return (
-    <article>
+    <article style={{marginLeft: 30, marginRight: 30}}>
       <h4>Kalkulator</h4>
       <div style={{ display: "flex", gap: 10 }}>
         <input
