@@ -65,7 +65,13 @@ export const Formularz = () => {
                 <td>{zad.title}</td>
                 <td>{zad.priority}</td>
                 <td>
-                  <button>Delate</button>
+                  <button onClick={()=> {
+                    const newTab = task.filter((taskToDelate) => {
+                        return taskToDelate.id !== zad.id
+                    })
+                    setTask(newTab)
+                    // console.log(zad)
+                  }}>Delate</button>
                 </td>
               </tr>
             );
