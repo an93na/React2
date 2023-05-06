@@ -11,14 +11,16 @@ export const Formularz = () => {
         action=""
         onSubmit={(e) => {
           e.preventDefault();
-          const newTask = {
-            id: Math.random(),
-            title: title,
-            priority: priority,
-          };
-          setTask((prevTask) => [...prevTask, newTask]);
-          setTitle("");
-          setPriority("");
+          if (title !== "" && priority !== "") {
+            const newTask = {
+              id: Math.random(),
+              title: title,
+              priority: priority,
+            };
+            setTask((prevTask) => [...prevTask, newTask]);
+            setTitle("");
+            setPriority("");
+          }
         }}
       >
         <input
@@ -48,13 +50,27 @@ export const Formularz = () => {
 
       <table>
         <thead>
-            <tr>
-                <th>ID</th>
-                <th>Title</th>
-                <th>Priority</th>
-                <th></th>
-            </tr>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Priority</th>
+            <th></th>
+          </tr>
         </thead>
+        <tbody>
+          {task.map((zad) => {
+            return (
+              <tr key={zad.id}>
+                <td>{zad.id}</td>
+                <td>{zad.title}</td>
+                <td>{zad.priority}</td>
+                <td>
+                  <button>Delate</button>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
       </table>
     </article>
   );
