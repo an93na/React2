@@ -31,7 +31,7 @@ export const WeightApp = () => {
           padding: 10,
         }}
       >
-        <AppTitle gray={gray} />
+        <AppTitle />
         <WeightFrom
           punds={punds}
           setPunds={setPunds}
