@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { AppTitle } from "./AppTitle";
 import { WeightFrom } from "./WeightFrom";
+import { WeightOutput } from "./WeightOutput";
 
-export const WeightComponents = () => {
+export const WeightApp = () => {
+  const [punds, setPunds] = useState("");
+
   const blue = "#4C49D4";
   const green = "#11B003";
   const red = "#F94444";
@@ -30,6 +33,8 @@ export const WeightComponents = () => {
       >
         <AppTitle gray={gray} />
         <WeightFrom
+          punds={punds}
+          setPunds={setPunds}
           blue={blue}
           green={green}
           red={red}
@@ -37,6 +42,17 @@ export const WeightComponents = () => {
           kilograms={kilograms}
           ounces={ounces}
         />
+        <WeightOutput
+          jednostka={punds * 453.59237}
+          label={grams}
+          color={blue}
+        />
+        <WeightOutput
+          jednostka={punds * 0.4535927}
+          label={kilograms}
+          color={green}
+        />
+        <WeightOutput jednostka={punds * 16} label={ounces} color={red} />
       </div>
     </article>
   );

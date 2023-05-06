@@ -1,12 +1,13 @@
 import './App.css';
 import "@picocss/pico";
 import { AppTitleDist } from './componentsPrzeliczOdl/AppTitle';
-import { WeightComponents } from './componentsPrzelicz/WeightComponents';
+import { WeightApp } from './componentsPrzelicz/WeightApp';
+
 
 function App() {
   return (
     <div className="App">
-      <WeightComponents />
+      <WeightApp />
       <AppTitleDist />
     </div>
   );
