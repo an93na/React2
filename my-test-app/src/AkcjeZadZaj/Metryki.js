@@ -25,7 +25,7 @@ export const Metryki = () => {
           id=""
           placeholder="wpisz ilość godzin ten tydzien"
           value={hours}
-          onChange={(event) => setHours(event.target.value)}
+          onChange={(event) => setHours(Number(event.target.value))}
         />
       </div>
       <div style={{ display: "flex", gap: 20 }}>
