@@ -8,7 +8,7 @@ export const Metryki = () => {
   const [last, setLast] = useState("");
 
   return (
-    <article>
+    <article style={{marginLeft: 30, marginRight: 30}}>
       <h4>Metryki</h4>
       <div style={{ display: "flex", gap: 20 }}>
         <select value={name} onChange={(event) => setName(event.target.value)}>

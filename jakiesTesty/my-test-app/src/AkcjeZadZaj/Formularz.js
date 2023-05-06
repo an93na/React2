@@ -5,7 +5,7 @@ export const Formularz = () => {
   const [priority, setPriority] = useState("");
   const [task, setTask] = useState([]);
   return (
-    <article>
+    <article style={{marginLeft: 30, marginRight: 30}}>
       <h4>Formularz</h4>
       <form
         action=""
