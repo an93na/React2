@@ -9,7 +9,7 @@ export const Metric1 = (props) => {
           {props.name} <span>•••</span>
         </p>
         <p className={classes.output}>{`${props.hours}hrs`}</p>
-        <p className={classes.lastWeekOutput}>Last Week - 36hrs</p>
+        <p className={classes.lastWeekOutput}>Last Week - {`${props.lastWeek}hrs`}</p>
       </div>
     </div>
   );
