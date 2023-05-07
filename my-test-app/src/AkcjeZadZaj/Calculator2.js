@@ -25,13 +25,14 @@ export const Calculator2 = () => {
         </div>
         <div style={{ display: "flex", gap: 20 }}>
           <button onClick={()=> setOpration('+')}>+</button>
-          <button>-</button>
-          <button>*</button>
+          <button onClick={()=> setOpration('-')}>-</button>
+          <button onClick={()=> setOpration('*')}>*</button>
         </div>
         <div style={{ display: "flex", gap: 20 }}>
-          <button>/</button>
+          <button onClick={()=> setOpration('/')}>/</button>
           <button>=</button>
-          <button>AC</button>
+          <button onClick={()=> {setOpration('')
+        setNumber('')}}>AC</button>
         </div>
       </div>
     </article>
