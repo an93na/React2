@@ -13,9 +13,8 @@ export const AddUser = (props) => {
       return "https://api.dicebear.com/6.x/adventurer/svg?seed=Ginger";
     } else if (plec === "M") {
       return "https://api.dicebear.com/6.x/adventurer/svg?seed=Sassy";
-    }
-    else {
-        return "https://api.dicebear.com/6.x/adventurer/svg?seed=Aneka"
+    } else {
+      return "https://api.dicebear.com/6.x/adventurer/svg?seed=Aneka";
     }
   };
 
@@ -32,7 +31,6 @@ export const AddUser = (props) => {
 
   return (
     <div style={{ backgroundColor: "#276ace", color: "white" }}>
-      <h4 style={{ padding: 10 }}>Dodaj nowego użytkownika</h4>
       <form
         action=""
         style={{ padding: 10 }}
@@ -40,7 +38,7 @@ export const AddUser = (props) => {
           e.preventDefault();
           if (name !== "" && lastName !== "" && city !== "" && country !== "") {
             // console.log(newUser);
-            const TabUser = [...users, newUser]
+            const TabUser = [...users, newUser];
             // console.log(TabUser)
             setUsers(TabUser);
             setName("");
@@ -51,6 +49,7 @@ export const AddUser = (props) => {
           }
         }}
       >
+        <h4 style={{ fontSize: 20}}>Dodaj nowego użytkownika</h4>
         <select
           name=""
           id=""
