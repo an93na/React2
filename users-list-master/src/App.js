@@ -100,7 +100,7 @@ function App() {
       <Header onSearchPhraseChange={handleSearchPhraseChange} />
       <UsersList users={usersToDisplay} setUsers={setUsers}/>
 
-      <AddUser />
+      <AddUser users={users} setUsers={setUsers}/>
     </div>
   );
 }

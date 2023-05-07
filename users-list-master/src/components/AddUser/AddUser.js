@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
-export const AddUser = () => {
+export const AddUser = (props) => {
+  const { users, setUsers } = props;
   const [plec, setPlec] = useState("");
   const [name, setName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -35,7 +36,10 @@ export const AddUser = () => {
         onSubmit={(e) => {
           e.preventDefault();
           if (name !== "" && lastName !== "" && city !== "" && country !== "") {
-            console.log(newUser);
+            // console.log(newUser);
+            const TabUser = [...users, newUser]
+            // setUsers(TabUser);
+            console.log(TabUser)
             setName("");
             setLastName("");
             setCity("");
