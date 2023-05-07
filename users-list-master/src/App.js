@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import { Header } from "./components/Header/Header";
 import { UsersList } from "./components/UsersList/UsersList";
+import { AddUser } from "./components/AddUser/AddUser";
 
 const USERS = [
   {
@@ -98,6 +99,8 @@ function App() {
     <div className="container">
       <Header onSearchPhraseChange={handleSearchPhraseChange} />
       <UsersList users={usersToDisplay} setUsers={setUsers}/>
+
+      <AddUser />
     </div>
   );
 }
