@@ -2,9 +2,9 @@ import React from "react";
 
 export const AddUser = () => {
   return (
-    <div>
+    <div style={{backgroundColor: '#276ace', color:'white'}}>
       <h4 style={{ padding: 10 }}>Dodaj nowego użytkownika</h4>
-      <form action="" style={{ padding: 10 }}>
+      <form action="" style={{ padding: 10 }} onSubmit={(e)=> {e.preventDefault()}}>
         <select name="" id="">
           <option value="" hidden>
             Wybierz płeć
