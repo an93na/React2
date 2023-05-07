@@ -1,5 +1,6 @@
 import { Calculator2 } from './AkcjeZadZaj/Calculator2';
 import { Counter } from './AkcjeZadZaj/Counter';
+import { FilterableProductTable } from './AkcjeZadZaj/FilterProducts/FilterableProductTable';
 import { Formularz } from './AkcjeZadZaj/Formularz';
 import { Kalkulator } from './AkcjeZadZaj/Kalkulator';
 import { Metryki } from './AkcjeZadZaj/Metryki';
@@ -14,6 +15,7 @@ function App() {
     <Formularz />
     <Metryki />
     <Calculator2/>
+    <FilterableProductTable />
     </div>
   );
 }
