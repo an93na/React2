@@ -1,3 +1,4 @@
+import { Calculator2 } from './AkcjeZadZaj/Calculator2';
 import { Counter } from './AkcjeZadZaj/Counter';
 import { Formularz } from './AkcjeZadZaj/Formularz';
 import { Kalkulator } from './AkcjeZadZaj/Kalkulator';
@@ -12,6 +13,7 @@ function App() {
     <Kalkulator/>
     <Formularz />
     <Metryki />
+    <Calculator2/>
     </div>
   );
 }
