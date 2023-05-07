@@ -38,8 +38,8 @@ export const AddUser = (props) => {
           if (name !== "" && lastName !== "" && city !== "" && country !== "") {
             // console.log(newUser);
             const TabUser = [...users, newUser]
-            // setUsers(TabUser);
-            console.log(TabUser)
+            setUsers(TabUser);
+            // console.log(TabUser)
             setName("");
             setLastName("");
             setCity("");
