@@ -1,7 +1,7 @@
 import React from "react";
 
 export const UsersListItem = (props) => {
-  const { user } = props;
+  const { user, users } = props;
   return (
     <div className="users-list-item__container">
       <img width={100} src={user.img} alt="avatar" />
@@ -24,8 +24,8 @@ export const UsersListItem = (props) => {
           cursor: "pointer",
         }}
         onClick={() => {
-          // console.table(props.users)
-          const newList = props.users.filter((userToDelete) => {
+          // console.table(users)
+          const newList = users.filter((userToDelete) => {
             // console.log(userToDelete.id)
             return userToDelete.id !== user.id;
           })
