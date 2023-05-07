@@ -1,9 +1,9 @@
 import React from "react";
 
-
-
-export const ProductCategoryRow = () => {
-    return <div>
-        
-    </div>
-}
+export const ProductCategoryRow = ({category}) => {
+  return (
+    <tr>
+      <th colSpan={2}>{category}</th>
+    </tr>
+  );
+};

@@ -1,15 +1,27 @@
 import React from "react";
 
-
-
-export const SearchBar = () => {
-    return <div>
-        <form>
-            <input type="text" name="" id="" placeholder="Search ..."/>
-            <label>
-                <input type="checkbox" name="" id="" /> Only show products in stock
-            </label>
-        </form> 
-        
-    </div>
-}
+export const SearchBar = ({
+  filterText,
+  inStockOnly,
+  onFilterTextChange,
+  onInStockOnlyChange,
+}) => {
+  return (
+    <form>
+      <input
+        type="text"
+        value={filterText}
+        placeholder="Search..."
+        onChange={(e) => onFilterTextChange(e.target.value)}
+      />
+      <label>
+        <input
+          type="checkbox"
+          checked={inStockOnly}
+          onChange={(e) => onInStockOnlyChange(e.target.checked)}
+        />{" "}
+        Only show products in stock
+      </label>
+    </form>
+  );
+};
