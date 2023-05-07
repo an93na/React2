@@ -14,6 +14,9 @@ export const AddUser = (props) => {
     } else if (plec === "M") {
       return "https://api.dicebear.com/6.x/adventurer/svg?seed=Sassy";
     }
+    else {
+        return "https://api.dicebear.com/6.x/adventurer/svg?seed=Aneka"
+    }
   };
 
   const newUser = {
@@ -38,8 +41,8 @@ export const AddUser = (props) => {
           if (name !== "" && lastName !== "" && city !== "" && country !== "") {
             // console.log(newUser);
             const TabUser = [...users, newUser]
-            setUsers(TabUser);
             // console.log(TabUser)
+            setUsers(TabUser);
             setName("");
             setLastName("");
             setCity("");
