@@ -1,11 +1,9 @@
 import React from "react";
 
-export const SearchBar = ({
-  filterText,
-  inStockOnly,
-  onFilterTextChange,
-  onInStockOnlyChange,
-}) => {
+export const SearchBar = (props) => {
+  const { filterText, inStockOnly, onFilterTextChange, onInStockOnlyChange } =
+    props;
+
   return (
     <form>
       <input

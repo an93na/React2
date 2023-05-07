@@ -1,17 +1,18 @@
 import React from "react";
 
+export const ProductRow = (props) => {
+  const { product } = props;
 
+  const name = product.stocked ? (
+    product.name
+  ) : (
+    <span style={{ color: "red" }}>{product.name}</span>
+  );
 
-export const ProductRow = ({ product }) => {
-    const name = product.stocked ? product.name :
-      <span style={{ color: 'red' }}>
-        {product.name}
-      </span>;
-  
-    return (
-      <tr>
-        <td>{name}</td>
-        <td>{product.price}</td>
-      </tr>
-    );
-  }
+  return (
+    <tr>
+      <td>{name}</td>
+      <td>{product.price}</td>
+    </tr>
+  );
+};
