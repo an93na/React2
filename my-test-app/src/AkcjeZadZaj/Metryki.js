@@ -6,10 +6,13 @@ export const Metryki = () => {
   const [hours, setHours] = useState("");
   const [color, setColor] = useState("");
   const [last, setLast] = useState("");
+  const [metrics, setMetrics] = useState([]);
+
 
   return (
     <article style={{marginLeft: 30, marginRight: 30}}>
       <h4>Metryki</h4>
+      <form action="">
       <div style={{ display: "flex", gap: 20 }}>
         <select value={name} onChange={(event) => setName(event.target.value)}>
           <option value="" hidden>
@@ -96,8 +99,9 @@ export const Metryki = () => {
         />{" "}
         more h
       </div>
-
       <Metric1 name={name} hours={hours} color={color} lastWeek={last} />
+      </form>
+      <button type="submit">Dodaj</button>
     </article>
   );
 };
