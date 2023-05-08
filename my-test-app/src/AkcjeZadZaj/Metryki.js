@@ -15,7 +15,7 @@ export const Metryki = () => {
         action=""
         onSubmit={(e) => {
           e.preventDefault();
-          const newMetric = 
+          const newMetric = (
             <Metric1
               key={Math.random()}
               name={name}
@@ -23,12 +23,13 @@ export const Metryki = () => {
               color={color}
               lastWeek={last}
             />
+          );
           const tabMetric = [...metrics, newMetric];
           setMetrics(tabMetric);
-          setName('');
-          setHours('');
-          setColor('');
-          setLast('');
+          setName("");
+          setHours("");
+          setColor("");
+          setLast("");
         }}
       >
         <div style={{ display: "flex", gap: 20 }}>
@@ -129,7 +130,7 @@ export const Metryki = () => {
         />
         <button type="submit">Dodaj</button>
       </form>
-      <div style={{display:"flex"}}>{metrics}</div>
+      <div style={{ display: "flex", gap: 10 }}>{metrics}</div>
     </article>
   );
 };
