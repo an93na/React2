@@ -14,6 +14,17 @@ export const Metryki = () => {
       <h4>Metryki</h4>
       <form action="" onSubmit={(e) => {
         e.preventDefault()
+        const newMetric = metrics.map((pojedyńczaMetryka) => (
+          <Metric1
+            key={pojedyńczaMetryka.id}
+            name={pojedyńczaMetryka.name}
+            hours={pojedyńczaMetryka.hours}
+            color={pojedyńczaMetryka.color}
+            lastWeek={pojedyńczaMetryka.last}
+          />
+        ))
+          // Tu będzie setMetric itd ...
+
       }}>
       <div style={{ display: "flex", gap: 20 }}>
         <select value={name} onChange={(event) => setName(event.target.value)}>
