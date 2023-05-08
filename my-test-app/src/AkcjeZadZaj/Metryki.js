@@ -7,16 +7,6 @@ export const Metryki = () => {
   const [color, setColor] = useState("");
   const [last, setLast] = useState("");
   const [metrics, setMetrics] = useState([]);
-  
-  const newMetric = metrics.map((pojedyńczaMetryka) => (
-    <Metric1
-      key={pojedyńczaMetryka.id}
-      name={pojedyńczaMetryka.name}
-      hours={pojedyńczaMetryka.hours}
-      color={pojedyńczaMetryka.color}
-      lastWeek={pojedyńczaMetryka.last}
-    />
-  ));
 
   return (
     <article style={{ marginLeft: 30, marginRight: 30 }}>
@@ -25,8 +15,20 @@ export const Metryki = () => {
         action=""
         onSubmit={(e) => {
           e.preventDefault();
-          const tabMetric = [...metrics, newMetric]
-          // Tu będzie setMetric itd ...
+          const newMetric = 
+            <Metric1
+              key={Math.random()}
+              name={name}
+              hours={hours}
+              color={color}
+              lastWeek={last}
+            />
+          const tabMetric = [...metrics, newMetric];
+          setMetrics(tabMetric);
+          setName('');
+          setHours('');
+          setColor('');
+          setLast('');
         }}
       >
         <div style={{ display: "flex", gap: 20 }}>
@@ -118,9 +120,16 @@ export const Metryki = () => {
           />{" "}
           more h
         </div>
-        <Metric1 name={name} hours={hours} color={color} lastWeek={last} />
+        <Metric1
+          name={name}
+          hours={hours}
+          color={color}
+          lastWeek={last}
+          id={Math.random()}
+        />
+        <button type="submit">Dodaj</button>
       </form>
-      <button type="submit">Dodaj</button>
+      <div style={{display:"flex"}}>{metrics}</div>
     </article>
   );
 };
