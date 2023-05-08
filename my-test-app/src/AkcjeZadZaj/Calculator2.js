@@ -14,7 +14,7 @@ export const Calculator2 = () => {
             // setExpression('')
         }
         else if (buttonValue === number) {
-            setNumber((prevNumber) => [...prevNumber + buttonValue])
+            setNumber((prevNumber) => [...prevNumber, buttonValue])
         }
     }
 
