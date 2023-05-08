@@ -12,7 +12,9 @@ export const Metryki = () => {
   return (
     <article style={{marginLeft: 30, marginRight: 30}}>
       <h4>Metryki</h4>
-      <form action="">
+      <form action="" onSubmit={(e) => {
+        e.preventDefault()
+      }}>
       <div style={{ display: "flex", gap: 20 }}>
         <select value={name} onChange={(event) => setName(event.target.value)}>
           <option value="" hidden>
