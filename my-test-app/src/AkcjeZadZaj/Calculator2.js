@@ -47,7 +47,7 @@ export const Calculator2 = () => {
   return (
     <article style={{ marginLeft: 30, marginRight: 30 }}>
       <h4>Kalkulator 2</h4>
-      <p>Oblicza działania na dwóch liczbach</p>
+      <p>Oblicza działania na dwóch liczbach (=). Po wciśnięciu licz dalej można wykorzystać wynik i znów zrobić na nim jakąś operacje.</p>
       <div
         style={{
           display: "flex",
@@ -78,7 +78,7 @@ export const Calculator2 = () => {
             {operation}
             {number2}
           </div>
-          <input type="text" name="" id="" readOnly value={result} />
+          <input type="text" name="" id="" readOnly value={`Wynik to: ${result}`} />
           <div style={{ display: "flex", gap: 20 }}>
             <button onClick={() => handleButtonClick(1)}>1</button>
             <button onClick={() => handleButtonClick(2)}>2</button>
