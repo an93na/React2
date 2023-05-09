@@ -15,25 +15,38 @@ export const UsersListItem = (props) => {
           {user.address.city}, {user.address.country}
         </p>
       </div>
-      <button
-        style={{
-          height: 20,
-          textAlign: "center",
-          alignItems: "center",
-          margin: "auto",
-          cursor: "pointer",
-        }}
-        onClick={() => {
-          // console.table(users)
-          const newList = users.filter((userToDelete) => {
-            // console.log(userToDelete.id)
-            return userToDelete.id !== user.id;
-          })
-          props.setUsers(newList);
-        }}
-      >
-        usun
-      </button>
+      <div>
+        <button
+          style={{
+            height: 20,
+            textAlign: "center",
+            alignItems: "center",
+            margin: "auto",
+            cursor: "pointer",
+          }}
+          onClick={() => {
+            // console.table(users)
+            const newList = users.filter((userToDelete) => {
+              // console.log(userToDelete.id)
+              return userToDelete.id !== user.id;
+            });
+            props.setUsers(newList);
+          }}
+        >
+          usun
+        </button>
+        <button
+          style={{
+            height: 20,
+            textAlign: "center",
+            alignItems: "center",
+            margin: "auto",
+            cursor: "pointer",
+          }}
+        >
+          edytuj
+        </button>
+      </div>
     </div>
   );
 };
