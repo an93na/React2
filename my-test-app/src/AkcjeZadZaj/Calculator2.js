@@ -21,8 +21,12 @@ export const Calculator2 = () => {
   const calculation = giveCalculation(number1, number2, operation);
 
   const handleButtonClick = (buttonValue) => {
-    setNumber1(buttonValue);
-    console.log(number1);
+    if (operation === ""){
+      setNumber1(buttonValue)
+    }
+    else {
+      setNumber2(buttonValue)
+    }
   };
 
   const handleButtonResultClick = () => setResult(calculation);
@@ -33,10 +37,9 @@ export const Calculator2 = () => {
     setNumber1('');
     setNumber2('');
     setOperation('');
-    setResult('')
-
+    setResult(0)
   }
-
+  console.log(calculation)
   return (
     <article style={{ marginLeft: 30, marginRight: 30 }}>
       <h4>Kalkulator 2</h4>
