@@ -42,7 +42,7 @@ export const Calculator2 = () => {
   return (
     <article style={{ marginLeft: 30, marginRight: 30 }}>
       <h4>Kalkulator 2</h4>
-      <p>oblicza działania na dwóch liczbach</p>
+      <p>Oblicza działania na dwóch liczbach</p>
       <div
         style={{
           display: "flex",
