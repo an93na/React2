@@ -1,21 +1,13 @@
 import React, { useState } from "react";
 
 export const Calculator2 = () => {
-    const [number, setNumber] = useState('')
+    const [number1, setNumber1] = useState('')
+    const [number2, setNumber2] = useState('')
     const [operation, setOperation] = useState('')
     const [result, setResult] = useState(0)
 
     const handleButtonClick = (buttonValue) => {
-        if (buttonValue === 'AC') {
-            setResult(0)
-        }
-        else if (buttonValue === '=') {
-            // setResult(eval(expression));
-            // setExpression('')
-        }
-        else if (buttonValue === number) {
-            setNumber((prevNumber) => [...prevNumber, buttonValue])
-        }
+      
     }
 
   return (
@@ -23,7 +15,7 @@ export const Calculator2 = () => {
       <h4>Kalkulator 2</h4>
       <div style={{ display: "flex", justifyContent: "center", alignItems: "center"}}>
       <div style={{width: 400, backgroundColor: "gray", padding: 20, margin: 20, borderRadius: '10px'}}>
-      <input type="text" name="" id="" readOnly value={result || number} />
+      <input type="text" name="" id="" readOnly />
         <div style={{ display: "flex", gap: 20 }}>
           <button onClick={()=> handleButtonClick(1)}>1</button>
           <button onClick={() => handleButtonClick(2)}>2</button>
