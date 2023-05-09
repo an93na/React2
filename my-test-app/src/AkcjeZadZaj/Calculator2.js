@@ -22,9 +22,9 @@ export const Calculator2 = () => {
 
   const handleButtonClick = (buttonValue) => {
     if (operation === "") {
-      setNumber1(buttonValue);
+      setNumber1(number1+buttonValue);
     } else {
-      setNumber2(buttonValue);
+      setNumber2(number2+buttonValue);
     }
   };
 
