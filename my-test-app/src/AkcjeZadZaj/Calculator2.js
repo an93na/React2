@@ -22,9 +22,9 @@ export const Calculator2 = () => {
 
   const handleButtonClick = (buttonValue) => {
     if (operation === "") {
-      setNumber1(number1+buttonValue);
+      setNumber1(number1 + buttonValue);
     } else {
-      setNumber2(number2+buttonValue);
+      setNumber2(number2 + buttonValue);
     }
   };
 
@@ -42,6 +42,7 @@ export const Calculator2 = () => {
   return (
     <article style={{ marginLeft: 30, marginRight: 30 }}>
       <h4>Kalkulator 2</h4>
+      <p>oblicza działania na dwóch liczbach</p>
       <div
         style={{
           display: "flex",
@@ -57,8 +58,21 @@ export const Calculator2 = () => {
             margin: 20,
             borderRadius: "10px",
           }}
-        > 
-          <div style={{height: 50, padding: 10, border: 'solid 1px black', margin:10, backgroundColor: 'black', borderRadius: '5px'}}>{number1}{operation}{number2}</div>
+        >
+          <div
+            style={{
+              height: 50,
+              padding: 10,
+              border: "solid 1px black",
+              margin: 10,
+              backgroundColor: "black",
+              borderRadius: "5px",
+            }}
+          >
+            {number1}
+            {operation}
+            {number2}
+          </div>
           <input type="text" name="" id="" readOnly value={result} />
           <div style={{ display: "flex", gap: 20 }}>
             <button onClick={() => handleButtonClick(1)}>1</button>
