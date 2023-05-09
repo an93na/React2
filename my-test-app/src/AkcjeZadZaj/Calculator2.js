@@ -73,10 +73,7 @@ export const Calculator2 = () => {
               backgroundColor: "black",
               borderRadius: "5px",
             }}
-          >
-            {number1}
-            {operation}
-            {number2}
+          > {`Działanie: ${number1} ${operation} ${number2}`}
           </div>
           <input type="text" name="" id="" readOnly value={`Wynik to: ${result}`} />
           <div style={{ display: "flex", gap: 20 }}>
