@@ -39,7 +39,9 @@ export const Calculator2 = () => {
     setResult(0);
   };
   const handleButtonNextClick = () => {
-    
+    setNumber1(result)
+    setNumber2('')
+    setOperation('')
   }
 
   return (
