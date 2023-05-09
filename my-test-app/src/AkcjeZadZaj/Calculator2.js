@@ -23,12 +23,10 @@ export const Calculator2 = () => {
       
     }
     
-    const handleButtonResultClick = () => {
-      return setResult(calculation)
-    }
-    const handleButtonOperationClick = (op) => {
-      return setOperation(op)
-    }
+    const handleButtonResultClick = () => setResult(calculation);
+    
+    const handleButtonOperationClick = (op) =>  setOperation(op);
+    
   return (
     <article style={{ marginLeft: 30, marginRight: 30 }}>
       <h4>Kalkulator 2</h4>
