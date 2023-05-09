@@ -38,6 +38,9 @@ export const Calculator2 = () => {
     setOperation("");
     setResult(0);
   };
+  const handleButtonNextClick = () => {
+    
+  }
 
   return (
     <article style={{ marginLeft: 30, marginRight: 30 }}>
@@ -96,7 +99,10 @@ export const Calculator2 = () => {
             <button onClick={() => handleButtonOperationClick("*")}>*</button>
             <button onClick={() => handleButtonOperationClick("/")}>/</button>
             <button onClick={handleButtonResultClick}>=</button>
+          </div>
+          <div style={{ display: "flex", gap: 20 }}>
             <button onClick={handleButtonACClick}>AC</button>
+            <button onClick={handleButtonNextClick}>Licz dalej</button>
           </div>
         </div>
       </div>
