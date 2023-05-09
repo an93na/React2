@@ -97,6 +97,7 @@ export const Calculator2 = () => {
           <div style={{ display: "flex", gap: 20 }}>
             <button onClick={() => handleButtonOperationClick("/")}>/</button>
             <button onClick={handleButtonResultClick}>=</button>
+            <button onClick={()=> handleButtonClick(0)}>0</button>
             <button onClick={handleButtonACClick}>AC</button>
           </div>
         </div>
