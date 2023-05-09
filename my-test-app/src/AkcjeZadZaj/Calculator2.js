@@ -6,8 +6,25 @@ export const Calculator2 = () => {
     const [operation, setOperation] = useState('')
     const [result, setResult] = useState(0)
 
+    function giveCalculation(n1, n2, op) {
+      if (op === "+") {
+        return Number(n1) + Number(n2);
+      } else if (op === "-") {
+        return Number(n1) - Number(n2);
+      } else if (op === "*") {
+        return Number(n1) * Number(n2);
+      } else if (op === "/") {
+        return Number(n1) / Number(n2);
+      }
+    }
+    
+    const calculation = giveCalculation(number1, number2, operation)
     const handleButtonClick = (buttonValue) => {
       
+    }
+    
+    const handleButtonResultClick = () => {
+      return setResult(calculation)
     }
 
   return (
@@ -15,7 +32,7 @@ export const Calculator2 = () => {
       <h4>Kalkulator 2</h4>
       <div style={{ display: "flex", justifyContent: "center", alignItems: "center"}}>
       <div style={{width: 400, backgroundColor: "gray", padding: 20, margin: 20, borderRadius: '10px'}}>
-      <input type="text" name="" id="" readOnly />
+      <input type="text" name="" id="" readOnly value={result}/>
         <div style={{ display: "flex", gap: 20 }}>
           <button onClick={()=> handleButtonClick(1)}>1</button>
           <button onClick={() => handleButtonClick(2)}>2</button>
@@ -38,7 +55,7 @@ export const Calculator2 = () => {
         </div>
         <div style={{ display: "flex", gap: 20 }}>
           <button onClick={()=> handleButtonClick('/')}>/</button>
-          <button onClick={() => handleButtonClick('=')}>=</button>
+          <button onClick={handleButtonResultClick}>=</button>
           <button onClick={()=> handleButtonClick('AC')}>AC</button>
         </div>
       </div>
