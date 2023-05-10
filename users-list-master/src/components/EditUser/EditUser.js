@@ -7,5 +7,13 @@ export const EditUser = (props) => {
   const [city, setCity] = useState("");
   const [country, setCountry] = useState("");
 
-  return <div></div>;
+  return <div>
+    <form action="">
+        <input type="text" name="" id="" value={name}/>
+        <input type="text" name="" id="" value={lastName}/>
+        <input type="text" name="" id="" value={city}/>
+        <input type="text" name="" id="" value={country}/>
+        <button type="submit"></button>
+    </form>
+  </div>;
 };
