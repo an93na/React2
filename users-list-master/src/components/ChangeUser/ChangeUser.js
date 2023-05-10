@@ -11,7 +11,10 @@ export const ChangeUser = (props) => {
   
     return <div>
         <form action="">
-            
+            <input type="text" name="" id="" placeholder={name} value={name}/>
+            <input type="text" name="" id="" placeholder={lastName} value={lastName}/>
+            <input type="text" name="" id="" placeholder={city} value={city}/>
+            <input type="text" name="" id="" placeholder= {country} value={country}/>
             <button type="submit">submit</button>
         </form>
     </div>
