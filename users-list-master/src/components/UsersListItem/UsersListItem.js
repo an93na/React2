@@ -1,4 +1,5 @@
 import React from "react";
+import { ChangeUser } from "../ChangeUser/ChangeUser";
 
 export const UsersListItem = (props) => {
   const { user, users } = props;
@@ -42,7 +43,7 @@ export const UsersListItem = (props) => {
             alignItems: "center",
             margin: "auto",
             cursor: "pointer",
-          }} onClick={() => console.log(user)}
+          }} onClick={() => <ChangeUser users={users}/>}
         >
           edytuj
         </button>
