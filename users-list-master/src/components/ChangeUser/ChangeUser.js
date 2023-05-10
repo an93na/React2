@@ -6,7 +6,7 @@ export const ChangeUser = (props) => {
   const [lastName, setLastName] = useState(props.lastName);
   const [city, setCity] = useState(props.city);
   const [country, setCountry] = useState(props.country);
-
+    
   const changeUser = {
     name: name,
     lastName: lastName,
