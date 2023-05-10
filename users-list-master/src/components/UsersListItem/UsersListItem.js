@@ -42,7 +42,7 @@ export const UsersListItem = (props) => {
             alignItems: "center",
             margin: "auto",
             cursor: "pointer",
-          }}
+          }} onClick={() => console.log(user)}
         >
           edytuj
         </button>
