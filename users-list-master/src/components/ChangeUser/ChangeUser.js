@@ -31,6 +31,10 @@ export const ChangeUser = (props) => {
           e.preventDefault();
           const editUser = [...users, changeUser];
           setUsers(editUser)
+          setName("");
+          setLastName("");
+          setCity("");
+          setCountry("");
         }}
       >
         <h4 style={{ fontSize: 20 }}>Edytuj użytkownika</h4>
