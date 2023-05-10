@@ -43,7 +43,9 @@ export const UsersListItem = (props) => {
             alignItems: "center",
             margin: "auto",
             cursor: "pointer",
-          }} onClick={() => <ChangeUser name={user.name} lastName={user.lastName}/>}
+          }} onClick={() => { console.log(user.name)
+          return <ChangeUser name={user.name} lastName={user.lastName}/>
+        }}
         >
           edytuj
         </button>
