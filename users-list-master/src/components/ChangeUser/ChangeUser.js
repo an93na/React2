@@ -10,7 +10,9 @@ export const ChangeUser = (props) => {
     const [country, setCountry] = useState("");
   
     return <div>
-        <form action="">
+        <form action="" onChange={(e)=>{
+            e.preventDefault()
+        }}>
             <input type="text" name="" id="" placeholder={name} value={name}/>
             <input type="text" name="" id="" placeholder={lastName} value={lastName}/>
             <input type="text" name="" id="" placeholder={city} value={city}/>
