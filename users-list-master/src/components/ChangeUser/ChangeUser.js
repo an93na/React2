@@ -2,10 +2,10 @@ import React, { useState } from "react";
 
 export const ChangeUser = (props) => {
   const { users, setUsers } = props;
-  const [name, setName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [city, setCity] = useState("");
-  const [country, setCountry] = useState("");
+  const [name, setName] = useState(props.name);
+  const [lastName, setLastName] = useState(props.lastName);
+  const [city, setCity] = useState(props.city);
+  const [country, setCountry] = useState(props.country);
 
   const changeUser = {
     name: name,
@@ -30,6 +30,7 @@ export const ChangeUser = (props) => {
         onSubmit={(e) => {
           e.preventDefault();
           const editUser = [...users, changeUser];
+          setUsers(editUser)
         }}
       >
         <h4 style={{ fontSize: 20 }}>Edytuj użytkownika</h4>
@@ -38,7 +39,6 @@ export const ChangeUser = (props) => {
             type="text"
             name=""
             id=""
-            placeholder={name}
             value={name}
             onChange={(event) => setName(event.target.value)}
           />
@@ -46,7 +46,6 @@ export const ChangeUser = (props) => {
             type="text"
             name=""
             id=""
-            placeholder={lastName}
             value={lastName}
             onChange={(event) => setLastName(event.target.value)}
           />
@@ -54,7 +53,6 @@ export const ChangeUser = (props) => {
             type="text"
             name=""
             id=""
-            placeholder={city}
             value={city}
             onChange={(event) => setCity(event.target.value)}
           />
@@ -62,7 +60,6 @@ export const ChangeUser = (props) => {
             type="text"
             name=""
             id=""
-            placeholder={country}
             value={country}
             onChange={(event) => setCountry(event.target.value)}
           />
