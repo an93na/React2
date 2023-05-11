@@ -63,6 +63,7 @@ export const AddUser = (props) => {
           <option value="M">mężczyzna</option>
         </select>
         <div>
+        <div>
           <input
             type="text"
             name=""
@@ -79,6 +80,7 @@ export const AddUser = (props) => {
             value={lastName}
             onChange={(event) => setLastName(event.target.value)}
           />
+          </div>
           <input
             type="text"
             name=""
