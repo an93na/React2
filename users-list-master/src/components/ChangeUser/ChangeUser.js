@@ -15,7 +15,7 @@ export const ChangeUser = (props) => {
       country: country,
     },
   };
-  console.log(props.lastName)
+  console.log(props.id)
   return (
     <div
       style={{

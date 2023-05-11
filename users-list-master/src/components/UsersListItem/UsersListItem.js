@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { ChangeUser } from "../ChangeUser/ChangeUser";
 
 export const UsersListItem = (props) => {
   const { user, users } = props;
+  const [userToEdit, setUserToEdit] = useState({ name:'', lastName:'', city:'', country:''});
 
   const data = () => {
       return(<ChangeUser
@@ -12,6 +13,8 @@ export const UsersListItem = (props) => {
       lastName={user.lastName}
       city={user.address.city}
       country={user.address.country}
+      setUsers = {props.setUsers}
+      id={user.id}
     />)
       }
     ;
@@ -56,11 +59,12 @@ export const UsersListItem = (props) => {
             margin: "auto",
             cursor: "pointer",
           }}
-          onClick={data}
+          onClick={setUserToEdit}
         >
           edytuj
         </button>
       </div>
+      {data()}
     </div>
   );
 };
