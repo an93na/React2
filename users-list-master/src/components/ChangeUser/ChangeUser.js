@@ -3,7 +3,7 @@ import React from "react";
 export const ChangeUser = (props) => {
   const { userToEdit, setUserToEdit, users, setUsers } = props;
 
-  console.log(userToEdit);
+  // console.log(userToEdit);
   return (
     <div
       style={{
@@ -17,10 +17,11 @@ export const ChangeUser = (props) => {
         action=""
         onSubmit={(e) => {
           e.preventDefault();
-          const newEditUser = users.map((user)=> {
+          const newEditUser = users.map((user) => {
             if (user.id === userToEdit.id){
-             return [...users, userToEdit]
+             return userToEdit
             }
+            return user
           })
           setUsers(newEditUser)
         }}
