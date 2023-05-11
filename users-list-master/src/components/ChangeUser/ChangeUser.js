@@ -24,6 +24,7 @@ export const ChangeUser = (props) => {
             return user
           })
           setUsers(newEditUser)
+          
         }}
       >
         <h4 style={{ fontSize: 20 }}>Edytuj użytkownika</h4>
