@@ -19,9 +19,10 @@ export const ChangeUser = (props) => {
           e.preventDefault();
           const newEditUser = users.map((user)=> {
             if (user.id === userToEdit.id){
-             return userToEdit
+             return [...users, userToEdit]
             }
           })
+          setUsers(newEditUser)
         }}
       >
         <h4 style={{ fontSize: 20 }}>Edytuj użytkownika</h4>
