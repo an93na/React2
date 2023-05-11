@@ -17,8 +17,10 @@ export const ChangeUser = (props) => {
         action=""
         onSubmit={(e) => {
           e.preventDefault();
-          userToEdit.map((user) => {
-            
+          const newEditUser = userToEdit.map((userEdit) => {
+              if(userEdit.id === userToEdit.id){
+                
+              }
           })
         }}
       >
