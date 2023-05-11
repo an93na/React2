@@ -3,17 +3,18 @@ import { ChangeUser } from "../ChangeUser/ChangeUser";
 
 export const UsersListItem = (props) => {
   const { user, users } = props;
-  const [userToEdit, setUserToEdit] = useState({ name:'', lastName:'', city:'', country:''});
+  const [userToEdit, setUserToEdit] = useState({ name:user.name, lastName:user.lastName, city: user.address.city, country: user.address.country});
 
   const data = () => {
       return(<ChangeUser
-      users={users}
-      user={user}
-      name={user.name}
-      lastName={user.lastName}
-      city={user.address.city}
-      country={user.address.country}
-      setUsers = {props.setUsers}
+      // users={users}
+      // user={user}
+      // name={user.name}
+      // lastName={user.lastName}
+      // city={user.address.city}
+      // country={user.address.country}
+      userToEdit = {userToEdit}
+      setUserToEdit = {setUserToEdit}
       id={user.id}
     />)
       }

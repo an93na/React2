@@ -15,7 +15,7 @@ export const ChangeUser = (props) => {
       country: country,
     },
   };
-  console.log(props.id)
+  console.log(props.userToEdit)
   return (
     <div
       style={{
