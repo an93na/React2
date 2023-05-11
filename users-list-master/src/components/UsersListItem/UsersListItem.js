@@ -50,7 +50,7 @@ export const UsersListItem = (props) => {
             margin: "auto",
             cursor: "pointer",
           }}
-          onClick={setUserToEdit}
+          onClick={()=> setUserToEdit(user)}
         >
           edytuj
         </button>
@@ -59,6 +59,8 @@ export const UsersListItem = (props) => {
         userToEdit={userToEdit}
         setUserToEdit={setUserToEdit}
         id={user.id}
+        users={users}
+        setUsers={props.setUsers}
       />
     </div>
   );

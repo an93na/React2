@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 
 export const ChangeUser = (props) => {
-  const { userToEdit, setUserToEdit } = props;
+  const { userToEdit, setUserToEdit, users, setUsers } = props;
 
   console.log(userToEdit);
   return (
@@ -17,10 +17,10 @@ export const ChangeUser = (props) => {
         action=""
         onSubmit={(e) => {
           e.preventDefault();
-          const newEditUser = userToEdit.map((userEdit) => {
-              if(userEdit.id === userToEdit.id){
-                
-              }
+          const newEditUser = users.map((user)=> {
+            if (user.id === userToEdit.id){
+             return userToEdit
+            }
           })
         }}
       >
