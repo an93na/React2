@@ -3,7 +3,7 @@ import React, { useState } from "react";
 export const ChangeUser = (props) => {
   const { userToEdit, setUserToEdit } = props;
 
-  console.log(props.userToEdit);
+  console.log(userToEdit);
   return (
     <div
       style={{
@@ -17,6 +17,9 @@ export const ChangeUser = (props) => {
         action=""
         onSubmit={(e) => {
           e.preventDefault();
+          userToEdit.map((user) => {
+            
+          })
         }}
       >
         <h4 style={{ fontSize: 20 }}>Edytuj użytkownika</h4>
