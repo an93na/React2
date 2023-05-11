@@ -4,10 +4,10 @@ import { ChangeUser } from "../ChangeUser/ChangeUser";
 export const UsersListItem = (props) => {
   const { user, users } = props;
   const [userToEdit, setUserToEdit] = useState({
-    name: user.name,
-    lastName: user.lastName,
-    city: user.address.city,
-    country: user.address.country,
+    name: '',
+    lastName: '',
+    city: '',
+    country: '',
   });
   return (
     <div className="users-list-item__container">
