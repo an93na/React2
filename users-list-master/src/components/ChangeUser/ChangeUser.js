@@ -1,21 +1,9 @@
 import React, { useState } from "react";
 
 export const ChangeUser = (props) => {
-  const { users, setUsers } = props;
-  const [name, setName] = useState(props.name);
-  const [lastName, setLastName] = useState(props.lastName);
-  const [city, setCity] = useState(props.city);
-  const [country, setCountry] = useState(props.country);
-    
-  const changeUser = {
-    name: name,
-    lastName: lastName,
-    address: {
-      city: city,
-      country: country,
-    },
-  };
-  console.log(props.userToEdit)
+  const { userToEdit, setUserToEdit } = props;
+
+  console.log(props.userToEdit);
   return (
     <div
       style={{
@@ -29,12 +17,6 @@ export const ChangeUser = (props) => {
         action=""
         onSubmit={(e) => {
           e.preventDefault();
-          const editUser = [...users, changeUser];
-          setUsers(editUser)
-          setName("");
-          setLastName("");
-          setCity("");
-          setCountry("");
         }}
       >
         <h4 style={{ fontSize: 20 }}>Edytuj użytkownika</h4>
@@ -43,29 +25,37 @@ export const ChangeUser = (props) => {
             type="text"
             name=""
             id=""
-            value={name}
-            onChange={(event) => setName(event.target.value)}
+            value={userToEdit.name}
+            onChange={(event) =>
+              setUserToEdit({ ...userToEdit, name: event.target.value })
+            }
           />
           <input
             type="text"
             name=""
             id=""
-            value={lastName}
-            onChange={(event) => setLastName(event.target.value)}
+            value={userToEdit.lastName}
+            onChange={(event) =>
+              setUserToEdit({ ...userToEdit, lastName: event.target.value })
+            }
           />
           <input
             type="text"
             name=""
             id=""
-            value={city}
-            onChange={(event) => setCity(event.target.value)}
+            value={userToEdit.city}
+            onChange={(event) =>
+              setUserToEdit({ ...userToEdit, city: event.target.value })
+            }
           />
           <input
             type="text"
             name=""
             id=""
-            value={country}
-            onChange={(event) => setCountry(event.target.value)}
+            value={userToEdit.country}
+            onChange={(event) =>
+              setUserToEdit({ ...userToEdit, country: event.target.value })
+            }
           />
         </div>
         <button type="submit">Edytuj</button>
