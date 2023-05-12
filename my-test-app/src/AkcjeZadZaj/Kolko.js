@@ -6,6 +6,7 @@ export const Kolko = () => {
   const [colorRamki, setColorRamki] = useState("");
   const [gruboscRamki, setGruboscRamki] = useState("");
   const [justifyContentValue, setJustifyContentValue] = useState("flex-start");
+  const [tekst, setTekst] = useState('');
 
   const handleRadioButtonChange = (e) => {
     setJustifyContentValue(e.target.value);
@@ -92,8 +93,19 @@ export const Kolko = () => {
           onChange={(event) => setColorRamki(event.target.value)}
         />
       </div>
+      <div style={{ display: "flex", gap: 30, margin: 20 }}>
+        <h5>Wpisz nazwę: </h5>
+        <input
+          type="text"
+          name=""
+          id=""
+          placeholder="nazwa"
+          value={tekst}
+          onChange={(event) => setTekst(event.target.value)}
+        />
+      </div>
       <b style={{ display: "block", margin: 30 }}>Preview</b>
-      <div style={{ display: "flex", justifyContent: justifyContentValue }}>
+      <div style={{ display: "flex", justifyContent: justifyContentValue, alignItems:'center' }}>
         <div
           style={{
             width: 100,
@@ -101,8 +113,11 @@ export const Kolko = () => {
             backgroundColor: colorTla,
             borderRadius: `${ksztalt}px`,
             border: `${gruboscRamki} solid ${colorRamki}`,
+            textAlign: 'center', 
+            alignItems: "center",
+            verticalAlign: 'center'
           }}
-        ></div>
+        >{tekst}</div>
       </div>
     </article>
   );
