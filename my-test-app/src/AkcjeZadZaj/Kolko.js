@@ -71,13 +71,26 @@ export const Kolko = () => {
       <div style={{ display: "flex", gap: 30, margin: 20 }}>
         <h5>wybierz grubość ramki: </h5>
         <select name="" id="" onChange={(e) => setGruboscRamki(e.target.value)}>
-            <option value="" hidden>Wybierz grubość ramki</option>
-            <option value="1px">1px</option>
-            <option value="2px">2px</option>
-            <option value="3px">3px</option>
-            <option value="4px">4px</option>
-            <option value="5px">5px</option>
+          <option value="" hidden>
+            Wybierz grubość ramki
+          </option>
+          <option value="1px">1px</option>
+          <option value="2px">2px</option>
+          <option value="3px">3px</option>
+          <option value="4px">4px</option>
+          <option value="5px">5px</option>
         </select>
+      </div>
+      <div style={{ display: "flex", gap: 30, margin: 20 }}>
+        <h5>wybierz kolor ramki: </h5>
+        <input
+          type="color"
+          name=""
+          id=""
+          style={{ width: 100 }}
+          value={colorRamki}
+          onChange={(event) => setColorRamki(event.target.value)}
+        />
       </div>
       <b style={{ display: "block", margin: 30 }}>Preview</b>
       <div style={{ display: "flex", justifyContent: justifyContentValue }}>
@@ -87,7 +100,7 @@ export const Kolko = () => {
             height: 100,
             backgroundColor: colorTla,
             borderRadius: `${ksztalt}px`,
-            border:`${gruboscRamki} solid red`
+            border: `${gruboscRamki} solid ${colorRamki}`,
           }}
         ></div>
       </div>
