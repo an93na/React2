@@ -98,7 +98,7 @@ function App() {
 
   return (
     <div className="container">
-      <Header onSearchPhraseChange={handleSearchPhraseChange} />
+      <Header onSearchPhraseChange={handleSearchPhraseChange} isCheched={isCheched} setIsChecked={setIsChecked}/>
       <UsersList users={usersToDisplay} setUsers={setUsers} />
       {isCheched === true && <AddUser users={users} setUsers={setUsers} /> }
     </div>
