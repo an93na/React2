@@ -60,6 +60,7 @@ const USERS = [
 function App() {
   const [users, setUsers] = useState(USERS);
   const [searchPhrase, setSearchPhrase] = useState("");
+  const [isCheched, setIsChecked] = useState(false)
 
   const handleSearchPhraseChange = (searchPhraseInput) => {
     setSearchPhrase(searchPhraseInput);
@@ -99,7 +100,7 @@ function App() {
     <div className="container">
       <Header onSearchPhraseChange={handleSearchPhraseChange} />
       <UsersList users={usersToDisplay} setUsers={setUsers} />
-      <AddUser users={users} setUsers={setUsers} /> 
+      {isCheched === true && <AddUser users={users} setUsers={setUsers} /> }
     </div>
   );
 }
