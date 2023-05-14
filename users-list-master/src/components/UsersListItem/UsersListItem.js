@@ -9,6 +9,7 @@ export const UsersListItem = (props) => {
     city: '',
     country: '',
   });
+  const [isChecked, setIsChecked] = useState(false);
   return (
     <div className="users-list-item__container">
       <img width={100} src={user.img} alt="avatar" />
