@@ -5,6 +5,7 @@ import { Formularz } from './AkcjeZadZaj/Formularz';
 import { Kalkulator } from './AkcjeZadZaj/Kalkulator';
 import { Kolko } from './AkcjeZadZaj/Kolko';
 import { Metryki } from './AkcjeZadZaj/Metryki';
+import { UseEffectPost } from './AkcjeZadZaj/UseEffectPost';
 import { WyswWar2 } from './AkcjeZadZaj/WyswietlanieWarunkowe/WyswWar2';
 import { WyswietlanieWarunkowe } from './AkcjeZadZaj/WyswietlanieWarunkowe/WyswietlanieWarunkowe';
 import './App.css';
@@ -22,6 +23,7 @@ function App() {
     <Kolko/>
     <WyswietlanieWarunkowe />
     <WyswWar2 />
+    <UseEffectPost />
     </div>
   );
 }
