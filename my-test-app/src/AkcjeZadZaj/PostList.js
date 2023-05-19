@@ -13,9 +13,14 @@ export const PostList = () => {
         })
     }, [])
 
-    console.log(posts)
+    // console.log(posts)
     return <div style={{padding: 10, margin: 10}}>
         <h4>Post List</h4>
+        <ol style={{textAlign: 'left'}}>
+            {posts.map((post) => {
+                return <li key={post.id}>{post.title}</li>
+            })}
+        </ol>
 
     </div>
 }
