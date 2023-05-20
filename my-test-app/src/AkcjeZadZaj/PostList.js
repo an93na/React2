@@ -4,15 +4,20 @@ export const PostList = () => {
   const [posts, setPosts] = useState([]);
   const [search, setSearch] = useState("");
 
+  const handleInputSearch = (event) => {
+    setSearch(event.target.value)
+  }
+
   const findPost = () => {
     return posts.filter(({title}) => {
       if (!search){
         return true
       }
-      return(title.toLocaleLowerCase().includes(search))
+      return(title.includes(search))
     })
   }
 
+  const newPosts = findPost()
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/posts")
@@ -33,11 +38,11 @@ export const PostList = () => {
           id=""
           placeholder="Search"
           value={search}
-          onChange={(event) => {setSearch(event.target.value)}}
+          onChange={handleInputSearch}
         />
       </div>
       <ol style={{ textAlign: "left" }}>
-        {posts.map((post) => {
+        {newPosts.map((post) => {
           return (
             <li key={post.id}>
               {post.title}
