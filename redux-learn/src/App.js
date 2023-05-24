@@ -10,14 +10,6 @@ import { TodoDetails } from "./jeszczeReact/component/TodoDetails";
 import { UsersDetails } from "./jeszczeReact/component/UsersDetails";
 import { UsersList } from "./jeszczeReact/component/UsersList";
 
-const style = {
-  margin: 20,
-  padding: 20,
-  border: "2px solid blue",
-  display: "flex",
-  borderRadius: 5,
-  gap: 50,
-};
 
 function App() {
   return (
