@@ -20,6 +20,7 @@ export const Navigation = () => {
           <Link to='/form'>Form</Link>
           <Link to='/list'>List</Link>
           <Link to='/userslist'>UsersList</Link>
+          <Link to='/counter'>Counter</Link>
         </div>
     </div>
 }

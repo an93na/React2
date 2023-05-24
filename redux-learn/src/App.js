@@ -9,6 +9,7 @@ import { NotFound } from "./jeszczeReact/NieZnaleziono";
 import { TodoDetails } from "./jeszczeReact/component/TodoDetails";
 import { UsersDetails } from "./jeszczeReact/component/UsersDetails";
 import { UsersList } from "./jeszczeReact/component/UsersList";
+import { Counter } from "./ReduxWprowadzenie/000_powtorka/Counter";
 
 
 function App() {
@@ -25,13 +26,9 @@ function App() {
           <Route path="todos/:id" element={<TodoDetails/>}/>
           <Route path="/users/:id" element={<UsersDetails />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/counter" element={<Counter/>}/>
         </Routes>
       </article>
-      <div>
-        <Routes>
-          
-        </Routes>
-      </div>
     </div>
   );
 }
