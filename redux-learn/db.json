@@ -1,0 +1,45 @@
+{
+    "todos": [
+      {
+        "id": 3,
+        "title": "Pouczyć się HTMLa"
+      },
+      {
+        "id": 4,
+        "title": "Odpocząć"
+      },
+      {
+        "title": "Pouczyć się Reduxa",
+        "id": 5
+      },
+      {
+        "title": "Pouczyć się React router dom",
+        "id": 2
+      },
+      {
+        "title": "test 123",
+        "id": 6
+      }
+    ],
+    "users": [
+      {
+        "id": 2,
+        "name": "John",
+        "lastName": "Doe",
+        "age": 32
+      },
+      {
+        "id": 3,
+        "name": "Jane",
+        "lastName": "Doe",
+        "age": 23
+      },
+      {
+        "id": 4,
+        "name": "Carl",
+        "lastName": "Johnson",
+        "age": 30
+      }
+    ]
+  }
+  
