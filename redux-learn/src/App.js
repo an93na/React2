@@ -3,6 +3,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import { Home } from "./jeszczeReact/component/Home";
 import { List } from "./jeszczeReact/component/List";
 import { Form } from "./jeszczeReact/component/Form";
+import { About } from "./jeszczeReact/component/About";
 
 const style = {
   margin: 20,
@@ -19,6 +20,7 @@ function App() {
       <article>
         <div style={style}>
           <Link to='/'>Home</Link>
+          <Link to='/about'>About</Link>
           <Link to='/form'>Form</Link>
           <Link to='/list'>List</Link>
         </div>
@@ -26,6 +28,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/form" element={<Form />} />
           <Route path="/list" element={<List />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </article>
     </div>
