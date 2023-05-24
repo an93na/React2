@@ -1,5 +1,5 @@
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import { Home } from "./jeszczeReact/component/Home";
 import { List } from "./jeszczeReact/component/List";
 import { Form } from "./jeszczeReact/component/Form";
@@ -18,7 +18,9 @@ function App() {
     <div className="container">
       <article>
         <div style={style}>
-          
+          <Link to='/'>Home</Link>
+          <Link to='/form'>Form</Link>
+          <Link to='/list'>List</Link>
         </div>
         <Routes>
           <Route path="/" element={<Home />} />
