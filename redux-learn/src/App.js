@@ -7,6 +7,7 @@ import { About } from "./jeszczeReact/component/About";
 import { Navigation } from "./jeszczeReact/component/NAvigation";
 import { NotFound } from "./jeszczeReact/NieZnaleziono";
 import { TodoDetails } from "./jeszczeReact/component/TodoDetails";
+import { UsersDetails } from "./jeszczeReact/component/UsersDetails";
 
 const style = {
   margin: 20,
@@ -28,6 +29,7 @@ function App() {
           <Route path="/list" element={<List />} />
           <Route path="/about" element={<About />} />
           <Route path="todos/:id" element={<TodoDetails/>}/>
+          <Route path="/users/:id" element={<UsersDetails />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </article>
