@@ -1,5 +1,5 @@
 import "./App.css";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { Home } from "./jeszczeReact/component/Home";
 import { List } from "./jeszczeReact/component/List";
 import { Form } from "./jeszczeReact/component/Form";
