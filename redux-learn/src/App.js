@@ -6,6 +6,7 @@ import { Form } from "./jeszczeReact/component/Form";
 import { About } from "./jeszczeReact/component/About";
 import { Navigation } from "./jeszczeReact/component/NAvigation";
 import { NotFound } from "./jeszczeReact/NieZnaleziono";
+import { TodoDetails } from "./jeszczeReact/component/TodoDetails";
 
 const style = {
   margin: 20,
@@ -26,6 +27,7 @@ function App() {
           <Route path="/form" element={<Form />} />
           <Route path="/list" element={<List />} />
           <Route path="/about" element={<About />} />
+          <Route path="todos/:id" element={<TodoDetails/>}/>
           <Route path="*" element={<NotFound />} />
         </Routes>
       </article>

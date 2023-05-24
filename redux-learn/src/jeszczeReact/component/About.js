@@ -2,7 +2,7 @@ import React from "react";
 
 export const About = () => {
   return (
-    <article>
+    <div>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis ad quas
         tenetur accusamus reiciendis non consequatur aut a harum! Id dicta hic
@@ -11,6 +11,6 @@ export const About = () => {
         rem dolore impedit fuga vel veritatis voluptate quo modi sunt! Corrupti
         dolorum eaque nihil sequi rem consequatur eos ad? Dolores?
       </p>
-    </article>
+    </div>
   );
 };
