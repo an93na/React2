@@ -1,5 +1,8 @@
 import "./App.css";
-import "@picocss/pico";
+import { Routes, Route } from "react-router-dom";
+import { Home } from "./jeszczeReact/component/Home";
+import { List } from "./jeszczeReact/component/List";
+import { Form } from "./jeszczeReact/component/Form";
 
 const style = {
   margin: 20,
@@ -11,11 +14,20 @@ const style = {
 };
 
 function App() {
-  return <div className="container">
-    <article>
-      
-    </article>
-  </div>;
+  return (
+    <div className="container">
+      <article>
+        <div style={style}>
+          
+        </div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/form" element={<Form />} />
+          <Route path="/list" element={<List />} />
+        </Routes>
+      </article>
+    </div>
+  );
 }
 
 export default App;
