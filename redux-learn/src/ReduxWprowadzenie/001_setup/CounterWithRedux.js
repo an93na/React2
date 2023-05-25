@@ -1,10 +1,11 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { add, decrement2, increment2, reserButton2 } from "./counterSlice2";
+import { add, decrement2, increment2, reserButton2, selecValue } from "./counterSlice2";
 
 
 export const CounterWithRedux = () => {
-    const counter2 = useSelector((state)=> state.counter2.value)
+    // const counter2 = useSelector((state)=> state.counter2.value)
+    const counter2 = useSelector(selecValue)
     const dispatch = useDispatch();
     return <article>
         <p>Counter With Redux</p>

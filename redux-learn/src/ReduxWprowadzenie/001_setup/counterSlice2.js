@@ -21,6 +21,8 @@ const counterSlice2 = createSlice({
   },
 });
 
+export const selecValue = (state) => state.counter2.value;
+
 export const { increment2, decrement2, reserButton2, add } =
   counterSlice2.actions;
 
