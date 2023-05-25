@@ -21,6 +21,7 @@ export const Navigation = () => {
           <Link to='/list'>List</Link>
           <Link to='/userslist'>UsersList</Link>
           <Link to='/counter'>Counter</Link>
+          <Link to='/counterred'>CounterWithRedux</Link>
         </div>
     </div>
 }

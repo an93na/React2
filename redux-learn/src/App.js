@@ -10,6 +10,7 @@ import { TodoDetails } from "./jeszczeReact/component/TodoDetails";
 import { UsersDetails } from "./jeszczeReact/component/UsersDetails";
 import { UsersList } from "./jeszczeReact/component/UsersList";
 import { Counter } from "./ReduxWprowadzenie/000_powtorka/Counter";
+import { CounterRed } from "./ReduxWprowadzenie/001_setup/CounterRed";
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path="/users/:id" element={<UsersDetails />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/counter" element={<Counter/>}/>
+          <Route path="/counterred" element={<CounterRed/>}/>
         </Routes>
       </article>
     </div>
