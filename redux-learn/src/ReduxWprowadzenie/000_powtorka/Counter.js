@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Route, Routes } from "react-router-dom";
 import { Increase } from "./Increase";
 import { Output } from "./Output";
 import { Decrease } from "./Decrease";
