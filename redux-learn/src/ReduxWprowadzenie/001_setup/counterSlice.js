@@ -7,6 +7,7 @@ const counterSice = createSlice({
   initialState: {
     value: 0, //stan początkowy tak jak w useState(0)
   },
+  //funkcje które mówią w jaki sposób możemy zaktualizować nasz stan
   reducers: {},
 });
 
