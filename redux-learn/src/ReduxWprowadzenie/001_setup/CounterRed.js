@@ -5,7 +5,9 @@ export const CounterRed = () => {
     const counter = useSelector((state) => state.counter.value)
   return (
     <div>
-        {counter}
+        <button>+1</button>
+        <input type="text" name="" id="" readOnly value={counter}/>
+        <button>-1</button>
         </div>
   )
 }
