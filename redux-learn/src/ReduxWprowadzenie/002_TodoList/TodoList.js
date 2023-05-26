@@ -5,7 +5,7 @@ import { addTodo} from "./sliceTodoList";
 export const TodoList = () => {
   const [todoTitle, setTodoTitle] = useState("");
   const dispatch = useDispatch();
-  const todos = useSelector((state) => state.todoRedu.value);
+  const todos = useSelector((state) => state.todoRedu.todos);
   return (
     <div>
       <p>TodoList</p>
