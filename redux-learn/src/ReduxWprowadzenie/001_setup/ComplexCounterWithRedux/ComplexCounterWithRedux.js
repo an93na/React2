@@ -8,11 +8,11 @@ export const ComplexCounterWithRedux = () => {
     <article>
       <p>ComplexCounterWithRedux</p>
       <div style={{ display: "flex", gap: 20 }}>
-        <IncreaseRedux/>
-        <IncreaseRedux/>
+        <IncreaseRedux value={5}/>
+        <IncreaseRedux value={1}/>
         <OutputRedux/>
-        <DecreaseRedux/>
-        <DecreaseRedux/>
+        <DecreaseRedux value={1}/>
+        <DecreaseRedux value={5}/>
       </div>
     </article>
   )
