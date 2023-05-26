@@ -6,8 +6,9 @@ const counterSlice2 = createSlice({
     value: 0,
   },
   reducers: {
-    increment2: (state) => {
-      state.value = state.value + 5;
+    increment2: (state, action) => {
+      state.value = state.value + action.payload ;
+
     },
     decrement2: (state) => {
       state.value = state.value - 5;

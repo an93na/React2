@@ -9,7 +9,7 @@ export const CounterWithRedux = () => {
     const dispatch = useDispatch();
     return <article>
         <p>Counter With Redux</p>
-        <button onClick={()=> dispatch(increment2())}>+5</button>
+        <button onClick={()=> dispatch(increment2(10))}>+10</button>
         <button onClick={()=> dispatch(add())}>{counter2}</button>
         <input type="text" name="" id="" readOnly value={counter2}/>
         <button onClick={() => dispatch(decrement2())}>-5</button>
