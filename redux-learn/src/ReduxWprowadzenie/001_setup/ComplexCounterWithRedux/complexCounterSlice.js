@@ -12,9 +12,12 @@ const complexCounterSlice = createSlice({
     decreaseComplex: (state, action) => {
       state.value = state.value - action.payload;
     },
+    resetComplex: (state) => {
+      state.value = 0;
+    },
   },
 });
 
 export const complexSelectVal = (state) => state.counter3.value;
-export const {increaseComplex, decreaseComplex} = complexCounterSlice.actions
+export const { increaseComplex, decreaseComplex, resetComplex } = complexCounterSlice.actions;
 export default complexCounterSlice.reducer;

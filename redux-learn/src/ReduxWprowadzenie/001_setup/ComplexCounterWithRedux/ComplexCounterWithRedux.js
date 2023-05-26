@@ -2,6 +2,7 @@ import React from 'react'
 import { IncreaseRedux } from './IncreaseRedux'
 import { OutputRedux } from './OutputRedux'
 import { DecreaseRedux } from './DecreaseRedux'
+import { ResetButtonComplex } from './ResetButtonComplex'
 
 export const ComplexCounterWithRedux = () => {
   return (
@@ -14,6 +15,7 @@ export const ComplexCounterWithRedux = () => {
         <DecreaseRedux value={1}/>
         <DecreaseRedux value={5}/>
       </div>
+      <ResetButtonComplex/>
     </article>
   )
 }
