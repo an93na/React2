@@ -2,6 +2,6 @@ import React from 'react'
 
 export const Search = () => {
   return (
-    <div>Search</div>
+    <input type="text" name="" id="" placeholder='search' />
   )
 }

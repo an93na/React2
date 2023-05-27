@@ -1,7 +1,7 @@
-import React from 'react'
-import { Form } from './Form'
-import { Search } from './Search'
-import { List } from './List'
+import React from "react";
+import { Form } from "./Form";
+import { Search } from "./Search";
+import { List } from "./List";
 
 export const TodoList2 = () => {
   return (
@@ -11,5 +11,5 @@ export const TodoList2 = () => {
       <Search />
       <List />
     </div>
-  )
-}
+  );
+};
