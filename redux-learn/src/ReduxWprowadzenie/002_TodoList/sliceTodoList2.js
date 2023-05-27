@@ -11,13 +11,18 @@ const sliceTodoList2 = createSlice({
       state.todos2.push(action.payload);
     },
     setSearchPhase: (state, action) => {
-        state.searchPhrase = action.payload
-    }
+      state.searchPhrase = action.payload;
+    },
   },
 });
 
-export const selectTodos2 = (state) => state.todoRedu2.todos2.filter((todo) => todo.includes(state.todoRedu2.searchPhrase));
+export const selectTodos2 = (state) =>
+  state.todoRedu2.todos2.filter((todo) =>
+    todo.includes(state.todoRedu2.searchPhrase)
+  );
 
-export const { addTodo2 } = sliceTodoList2.actions;
+export const selectSearchPhrase = (state) => state.todoRedu2.searchPhrase;
+
+export const { addTodo2, setSearchPhase } = sliceTodoList2.actions;
 
 export default sliceTodoList2.reducer;
