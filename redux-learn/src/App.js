@@ -14,6 +14,7 @@ import { CounterRed } from "./ReduxWprowadzenie/001_setup/CounterRed";
 import { CounterWithRedux } from "./ReduxWprowadzenie/001_setup/CounterWithRedux";
 import { ComplexCounterWithRedux } from "./ReduxWprowadzenie/001_setup/ComplexCounterWithRedux/ComplexCounterWithRedux";
 import { TodoList } from "./ReduxWprowadzenie/002_TodoList/TodoList";
+import { TodoList2 } from "./ReduxWprowadzenie/002_TodoList/TodoList2";
 
 
 function App() {
@@ -31,7 +32,7 @@ function App() {
           <Route path="/users/:id" element={<UsersDetails />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/counter" element={<Counter/>}/>
-          <Route path="/counterred" element={<><CounterRed/> <CounterWithRedux/> <ComplexCounterWithRedux/> <TodoList/> </>}/>
+          <Route path="/counterred" element={<><CounterRed/> <CounterWithRedux/> <ComplexCounterWithRedux/> <TodoList/> <TodoList2/> </>}/>
         </Routes>
       </article>
     </div>
