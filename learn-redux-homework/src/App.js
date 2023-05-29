@@ -8,6 +8,8 @@ function App() {
         <nav>
           <Link to='/'>Home</Link>
           <Link to='/dashboard'>Dashboard</Link>
+          <Link to='/counter'>Counter</Link>
+          <Link to='/counterwithinput'>CounterWithInput</Link>
         </nav>
       </article>
     </main>
