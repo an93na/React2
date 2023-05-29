@@ -1,10 +1,16 @@
 import './App.css';
+import { Link } from "react-router-dom";
 
 function App() {
   return (
-    <div className="container">
-
-    </div>
+    <main className="container">
+      <article>
+        <nav>
+          <Link to='/'>Home</Link>
+          <Link to='/dashboard'>Dashboard</Link>
+        </nav>
+      </article>
+    </main>
   );
 }
 
