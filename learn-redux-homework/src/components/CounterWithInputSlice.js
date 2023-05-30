@@ -6,17 +6,20 @@ const CounterWithInputSlice = createSlice({
     num: 0,
   },
   reducers: {
+    odd: (state, action) => {
+      state.num = state.num - action.payload;
+    },
     add: (state, action) => {
       state.num = state.num + action.payload;
     },
-    odd: (state, action) => {
-      state.num = state.num - action.payload;
+    resetBtn: (state) => {
+      state.num = 0;
     },
   },
 });
 
-export const selectCountInput = (state) => state.counterInpt.num
+export const selectCountInput = (state) => state.counterInpt.num;
 
-export const {add, odd} = CounterWithInputSlice.actions
+export const { add, odd, resetBtn } = CounterWithInputSlice.actions;
 
-export default CounterWithInputSlice.reducer
+export default CounterWithInputSlice.reducer;
