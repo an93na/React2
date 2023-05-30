@@ -6,11 +6,11 @@ const counterSlice = createSlice({
     value: 0,
   },
   reducers: {
-    decrease: (state) => {
-      state.value = state.value - 1;
+    decrease: (state, action) => {
+      state.value = state.value - action.payload;
     },
-    increase: (state) => {
-      state.value = state.value + 1;
+    increase: (state, action) => {
+      state.value = state.value + action.payload;
     },
     reset: (state) => {
       state.value = 0;
@@ -18,7 +18,7 @@ const counterSlice = createSlice({
   },
 });
 
-export const useCounterHomework = (state) => state.counterHomework.value
+export const selectCosTamCosTam = (state) => state.counterHomework.value
 
 export const { increase, decrease, reset } = counterSlice.actions;
 

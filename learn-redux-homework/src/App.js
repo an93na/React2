@@ -1,4 +1,3 @@
-import './App.css';
 import { Link, Route, Routes } from "react-router-dom";
 import { Home } from './components/Home';
 import { Dashboard } from './components/Dashboard';
@@ -7,7 +6,7 @@ import { CounterWithInput } from './components/CounterWithInput';
 
 function App() {
   return (
-    <main className="container">
+    <div className="container">
       <article>
         <nav>
           <Link to='/'>Home</Link>
@@ -24,7 +23,7 @@ function App() {
         <Route path='/counterwithinput' element={<CounterWithInput/>} />
       </Routes>
 
-    </main>
+    </div>
   );
 }
 
