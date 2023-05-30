@@ -1,7 +1,11 @@
-import React from 'react'
+import React from "react";
 
-export const Dashboard = () => {
+export const Dashboard = (value) => {
   return (
-    <div>Dashboard</div>
-  )
-}
+    <div>
+      <h3>Dashboard</h3>
+      <p>Counter value: {} </p>
+      <p>Counter with input value: {} </p>
+    </div>
+  );
+};
