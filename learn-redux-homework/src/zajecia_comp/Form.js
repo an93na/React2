@@ -16,6 +16,7 @@ export const Form = () => {
         }}
       >
         <input
+        required
           type="text"
           name=""
           id=""

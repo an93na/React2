@@ -7,8 +7,8 @@ export const List = () => {
   return (
     <div>
       <ul>
-        <li>
-          <b>Todos:</b>
+        <li style={{listStyle: 'none'}}>
+          <b>TODOS:</b>
         </li>
         {todos.map((todo) => {
           return <li key={todo}>{todo}</li>;
