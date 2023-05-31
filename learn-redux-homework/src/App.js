@@ -3,6 +3,7 @@ import { Home } from './components/Home';
 import { Dashboard } from './components/Dashboard';
 import { Counter } from './components/Counter';
 import { CounterWithInput } from './components/CounterWithInput';
+import { TodoList } from "./zajecia_comp/TodoList";
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
         <Route path='/dashboard' element={<Dashboard/>} />
         <Route path='/counter' element={<Counter/>} />
         <Route path='/counterwithinput' element={<CounterWithInput/>} />
-        {/* <Route path="/zajecia" element={}/>  */}
+        <Route path="/zajecia" element={<TodoList/>}/> 
       </Routes>
 
     </div>
