@@ -23,6 +23,8 @@ export const selectTodo = (state) => state.todoList.todos;
 
 export const selectTotalNumberofTodos = (state) => state.todoList.todos.length;
 
+export const selectTotalNumberMarksofTodos = (state) => state.todoList.todos.join('').length;
+
 export const { addTodo, resetState } = todoListSlice.actions;
 
 export default todoListSlice.reducer;
