@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   todos: [],
+  pharse: "",
 };
 
 const todoListSlice = createSlice({
@@ -16,10 +17,14 @@ const todoListSlice = createSlice({
       return initialState;
       // resetuje stan
     },
+    setPharse: (state, action) => {
+      state.pharse = action.payload;
+    },
   },
 });
 
-export const selectTodo = (state) => state.todoList.todos;
+export const selectTodo = (state) =>
+  state.todoList.todos.filter((todo) => todo.includes(state.todoList.pharse));
 
 export const selectTotalNumberofTodos = (state) => state.todoList.todos.length;
 
@@ -29,6 +34,8 @@ export const selectTotalNumberMarksofTodos = (state) =>
 export const selectTotalNumberLessOf5MarksTodos = (state) =>
   state.todoList.todos.filter((todo) => todo.length < 5).length;
 
-export const { addTodo, resetState } = todoListSlice.actions;
+export const selectorSearchPharse = (state) => state.todoList.pharse;
+
+export const { addTodo, resetState, setPharse } = todoListSlice.actions;
 
 export default todoListSlice.reducer;
