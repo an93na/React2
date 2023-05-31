@@ -19,7 +19,9 @@ const todoListSlice = createSlice({
   },
 });
 
-export const selectTodo = (state) => state.todoList.todos
+export const selectTodo = (state) => state.todoList.todos;
+
+export const selectTotalNumberofTodos = (state) => state.todoList.todos.length;
 
 export const { addTodo, resetState } = todoListSlice.actions;
 
