@@ -10,7 +10,7 @@ export const Form = () => {
           e.preventDefault();
         }}
       >
-        <input type="text" name="" id="" value={todo} onChange={(e) => setTodo(e.target.value)} />
+        <input type="text" name="" id="" placeholder="todo" value={todo} onChange={(e) => setTodo(e.target.value)} />
         <button>Submit</button>
       </form>
     </div>
