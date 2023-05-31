@@ -1,7 +1,18 @@
-import React from 'react'
+import React, { useState } from "react";
 
 export const Form = () => {
+  const [todo, setTodo] = useState();
+
   return (
-    <div>Form</div>
-  )
-}
+    <div>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+        }}
+      >
+        <input type="text" name="" id="" value={todo} onChange={(e) => setTodo(e.target.value)} />
+        <button>Submit</button>
+      </form>
+    </div>
+  );
+};

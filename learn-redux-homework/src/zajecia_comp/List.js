@@ -1,7 +1,12 @@
-import React from 'react'
+import React from "react";
 
 export const List = () => {
   return (
-    <div>List</div>
-  )
-}
+    <div>
+      <b>
+        <p>Todos:</p>
+      </b>
+      
+    </div>
+  );
+};
