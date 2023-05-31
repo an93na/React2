@@ -13,6 +13,7 @@ function App() {
           <Link to='/dashboard'>Dashboard</Link>
           <Link to='/counter'>Counter</Link>
           <Link to='/counterwithinput'>CounterWithInput</Link>
+          <Link to='/zajecia'>Zajecia</Link>
         </nav>
       </article>
 
@@ -21,6 +22,7 @@ function App() {
         <Route path='/dashboard' element={<Dashboard/>} />
         <Route path='/counter' element={<Counter/>} />
         <Route path='/counterwithinput' element={<CounterWithInput/>} />
+        {/* <Route path="/zajecia" element={}/>  */}
       </Routes>
 
     </div>
