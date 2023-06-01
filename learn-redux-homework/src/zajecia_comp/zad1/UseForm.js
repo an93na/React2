@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addUser } from "./usersSlice";
 
 export const UseForm = () => {
+  const [name, setName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [age, setAge] = useState("");
+
+  const dispatch = useDispatch();
+
   return (
     <div
       style={{
@@ -14,11 +22,42 @@ export const UseForm = () => {
       <form
         onSubmit={(e) => {
           e.preventDefault();
+          const user = {
+            id: Math.random(),
+            name,
+            lastName,
+            age,
+          };
+          dispatch(addUser(user));
+          setLastName("");
+          setLastName("");
+          setAge("");
         }}
       >
-        <input type="text" name="" id="" placeholder="Name" />
-        <input type="text" name="" id="" placeholder="Last Name" />
-        <input type="text" name="" id="" placeholder="Age" />
+        <input
+          type="text"
+          name=""
+          id=""
+          placeholder="Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <input
+          type="text"
+          name=""
+          id=""
+          placeholder="Last Name"
+          value={lastName}
+          onChange={(e) => setLastName(e.target.value)}
+        />
+        <input
+          type="text"
+          name=""
+          id=""
+          placeholder="Age"
+          value={age}
+          onChange={(e) => setAge(e.target.value)}
+        />
         <button>Submit</button>
       </form>
     </div>
