@@ -35,6 +35,7 @@ export const UseForm = () => {
         }}
       >
         <input
+        required
           type="text"
           name=""
           id=""
@@ -43,6 +44,7 @@ export const UseForm = () => {
           onChange={(e) => setName(e.target.value)}
         />
         <input
+        required
           type="text"
           name=""
           id=""

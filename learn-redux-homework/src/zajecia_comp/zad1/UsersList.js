@@ -1,7 +1,9 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
+import { selectUser } from './usersSlice';
 
 export const UsersList = () => {
-    const users = [];
+    const users = useSelector(selectUser);
 
   return (
     <table>
