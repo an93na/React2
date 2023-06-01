@@ -29,7 +29,7 @@ export const UseForm = () => {
             age,
           };
           dispatch(addUser(user));
-          setLastName("");
+          setName("");
           setLastName("");
           setAge("");
         }}
