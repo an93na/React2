@@ -32,7 +32,7 @@ export const selectTotalNumberMarksofTodos = (state) =>
   state.todoList.todos.join("").length;
 
 export const selectTotalNumberLessOf5MarksTodos = (state) =>
-  state.todoList.todos.filter((todo) => todo.length < 5).length;
+  state.todoList.todos.filter((todo) => todo.length <= 5).length;
 
 export const selectorSearchPharse = (state) => state.todoList.pharse;
 
