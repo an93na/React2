@@ -5,6 +5,7 @@ import { Counter } from './components/Counter';
 import { CounterWithInput } from './components/CounterWithInput';
 import { TodoList } from "./zajecia_comp/TodoList";
 import { Metrics } from "./zajecia_comp/Metrics";
+import { Users } from "./zajecia_comp/zad1/Users";
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
         <Route path='/dashboard' element={<Dashboard/>} />
         <Route path='/counter' element={<Counter/>} />
         <Route path='/counterwithinput' element={<CounterWithInput/>} />
-        <Route path="/zajecia" element={<><TodoList/>  <Metrics/></>}/> 
+        <Route path="/zajecia" element={<><TodoList/>  <Metrics/> <Users/> </>}/> 
       </Routes>
 
     </div>
