@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getCounter } from "./sliceCounterWithAsync";
+import { getCounter, updateCounter } from "./sliceCounterWithAsync";
 import { Loader } from "./Loader";
 import { selectIsLoading, selectCounterValue } from "./sliceCounterWithAsync";
 
@@ -16,9 +16,9 @@ export const CounterWithAsync = () => {
     <article>
       {isLoading && <Loader />}
       <p>CounterWithAsync</p>
-      <button>+5</button>
+      <button onClick={() => dispatch(updateCounter(counter+5))}>+5</button>
       <input type="text" value={counter} readOnly />
-      <button>-10</button>
+      <button onClick={() => dispatch(updateCounter(counter-10))}>-10</button>
     </article>
   );
 };
