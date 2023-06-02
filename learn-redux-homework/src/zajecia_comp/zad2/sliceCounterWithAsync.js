@@ -19,5 +19,11 @@ const sliceCounterWithAsync = createSlice({
     isLoading: false,
   },
   reducers: {},
-  extraReducers: (builder) => {},
+  extraReducers: (builder) => {
+    builder.addCase(getCounter.fulfilled, (state, action) => {
+      state.value = action.payload;
+    });
+  },
 });
+
+export default sliceCounterWithAsync.reducer;
