@@ -7,7 +7,7 @@ export const getCounter = createAsyncThunk(
     const data = await response.json();
 
     //poinformujemy slice o danych które przyszły z backendu
-    thunkAPI.fulfillWithValue(data);
+    return thunkAPI.fulfillWithValue(data);
   }
 );
 
@@ -20,10 +20,18 @@ const sliceCounterWithAsync = createSlice({
   },
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(getCounter.fulfilled, (state, action) => {
-      state.value = action.payload;
-    });
+    builder
+      .addCase(getCounter.fulfilled, (state, action) => {
+        state.value = action.payload.value;
+        state.isLoading = false;
+      })
+      .addCase(getCounter.pending, (state) => {
+        state.isLoading = true;
+      });
   },
 });
+
+export const selectIsLoading = (state) => state.asyncCounter.isLoading;
+export const selectCounterValue = (state) => state.asyncCounter.value;
 
 export default sliceCounterWithAsync.reducer;
