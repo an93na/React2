@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import Login from "./Login";
 
 describe("Login component", () => {
-
+    
     test("should be username text in placeholder", () => {
         // wchodzimy do pliku Login
         render(<Login />);
@@ -25,14 +25,18 @@ describe("Login component", () => {
         expect(buttonElement).toBeInTheDocument();
     });
 
+    // test mający na celu sprawdzenie czy placeholder istnieje aby potem dodawać błędy jeśli istnieje
     test("should be empty for username input", () => {
         render(<Login />);
         const usernameInput = screen.getByPlaceholderText("username");
         expect(usernameInput.value).toBe("");
     });
+
     test("should be empty for password input", () => {
         render(<Login />);
-        const PasswordInput = screen.getByPlaceholderText("password");
-        expect(PasswordInput.value).toBe("");
+        const passwordInput = screen.getByPlaceholderText("password");
+        expect(passwordInput.value).toBe("");
     });
+
+
 });
