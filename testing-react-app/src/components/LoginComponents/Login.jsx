@@ -1,15 +1,29 @@
+import { useState } from "react";
+
 const Login = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   return (
-      <div className="container">
-          <form>
-              <input type="text" placeholder="username" />
-              <input type="password" placeholder="password" />
+    <div className="container">
+      <form>
+        <input
+          type="text"
+          placeholder="username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <input
+          type="password"
+          placeholder="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
-              <button>Login</button>
-          </form>
-      </div>
-  )
-}
+        <button>Login</button>
+      </form>
+    </div>
+  );
+};
 
 export default Login;

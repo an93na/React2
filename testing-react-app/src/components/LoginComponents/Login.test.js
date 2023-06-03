@@ -1,6 +1,8 @@
 import { render, screen } from "@testing-library/react";
 import Login from "./Login";
 
+
+
 describe("Login component", () => {
   test("should be username text in placeholder", () => {
     // wchodzimy do pliku Login
@@ -19,7 +21,8 @@ describe("Login component", () => {
 
   test("should rendered button", () => {
     render(<Login />);
+    // getByRole - sprawdzamy role elementu czyli czy może istnieć button, input, form
     const buttonElement = screen.getByRole("button");
     expect(buttonElement).toBeInTheDocument();
-  });
+});
 });
