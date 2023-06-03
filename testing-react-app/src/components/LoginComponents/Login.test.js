@@ -16,4 +16,10 @@ describe("Login component", () => {
     const passwordInputPlaceholder = screen.getByPlaceholderText("password");
     expect(passwordInputPlaceholder).toBeInTheDocument();
   });
+
+  test("should rendered button", () => {
+    render(<Login />);
+    const buttonElement = screen.getByRole("button");
+    expect(buttonElement).toBeInTheDocument();
+  });
 });
