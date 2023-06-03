@@ -11,3 +11,38 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input{
+  height: 40px;
+  margin: 10px;
+}
+
+button{
+  width: 140px;
+  height: 30px;
+  background-color: green;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  margin: 4px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+button:disabled{
+  background-color: gray;
+  cursor: not-allowed;
+}
