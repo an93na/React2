@@ -43,6 +43,7 @@ const Login = () => {
           {loading ? "please wait" : "Login"}
         </button>
         <span
+          data-testid="error"
           style={{ visibility: error ? "visible" : "hidden" }}
         >
           Something went wrong
