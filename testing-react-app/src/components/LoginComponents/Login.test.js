@@ -6,7 +6,7 @@ jest.mock("axios", () => ({
 
   default: {
     get: () => ({
-      data: { id: 1, name: "John" },
+      data: { name: "John", username: 'Cookie' },
     }),
   },
 }));
