@@ -2,10 +2,12 @@
 
 const Login = () => {
   return <div className="container">
-    <form action="">
+    <form>
         <input type="text" placeholder="username" />
         <input type="password" placeholder="password" />
-        <button>Login</button>
+        <button onClick={()=> {
+
+        }}>Login</button>
     </form>
   </div>;
 };
