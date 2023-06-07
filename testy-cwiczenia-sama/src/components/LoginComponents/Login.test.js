@@ -39,4 +39,11 @@ describe("Login component", () => {
     const butonElement = screen.getByRole("button");
     expect(butonElement).toBeInTheDocument();
   });
+
+    // gdy nie wpiszemy username i password nie możemy przejść dalej, czyli 
+    // testujemy czy takie coś działa
+    test("", ()=>{
+
+    })
+
 });
