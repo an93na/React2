@@ -25,4 +25,10 @@ describe("Login component", () => {
     // czyli toBeInDocument
     expect(usernameInputPlaceholder).toBeInTheDocument();
   });
+
+  test("should be password text in placeholder", () => {
+    render(<Login />);
+    const passwordInputPlaceholder = screen.getByPlaceholderText("password");
+    expect(passwordInputPlaceholder).toBeInTheDocument();
+  });
 });
