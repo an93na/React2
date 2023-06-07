@@ -31,4 +31,12 @@ describe("Login component", () => {
     const passwordInputPlaceholder = screen.getByPlaceholderText("password");
     expect(passwordInputPlaceholder).toBeInTheDocument();
   });
+
+  // sprawdzamy button czy on istnieje
+  test("should rendered button", () => {
+    render(<Login />);
+    // łapiemy go przy pomocy getByRole('button) sprawdzamy czy istnieje
+    const butonElement = screen.getByRole("button");
+    expect(butonElement).toBeInTheDocument();
+  });
 });
