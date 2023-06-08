@@ -41,7 +41,7 @@ const Login = () => {
         <button
           onClick={handlerClick}
         >
-          Login
+          {loading ? "Please Wait" : "Login"}
         </button>
       </form>
     </div>
