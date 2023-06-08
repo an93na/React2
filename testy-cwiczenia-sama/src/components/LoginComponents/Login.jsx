@@ -20,6 +20,7 @@ const Login = () => {
       // catch lapiemy jakiś błąd
       setError(true);
     }
+    setLoading(false);
   };
 
   return (
@@ -38,11 +39,12 @@ const Login = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button
-          onClick={handlerClick}
-        >
+        <button onClick={handlerClick}>
           {loading ? "Please Wait" : "Login"}
         </button>
+        <span style={{ visibility: error ? "visible" : "hidden" }}>
+          Error, empty username
+        </span>
       </form>
     </div>
   );
