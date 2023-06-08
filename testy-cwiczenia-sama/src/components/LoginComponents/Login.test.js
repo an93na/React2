@@ -40,10 +40,12 @@ describe("Login component", () => {
     expect(butonElement).toBeInTheDocument();
   });
 
-    // gdy nie wpiszemy username i password nie możemy przejść dalej, czyli 
-    // testujemy czy takie coś działa
-    test("", ()=>{
-
-    })
-
+  // gdy nie wpiszemy username i password nie możemy przejść dalej, czyli
+  // testujemy czy takie coś działa
+  // czyli jeśli coś wpiszemy to placeholder powinien zniknąć
+  test("should be empty for username input", () => {
+    render(<Login />);
+    const usernameInput = screen.getByPlaceholderText("username");
+    expect(usernameInput.value).toBe("");
+  });
 });
