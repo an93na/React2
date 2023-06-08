@@ -48,4 +48,11 @@ describe("Login component", () => {
     const usernameInput = screen.getByPlaceholderText("username");
     expect(usernameInput.value).toBe("");
   });
+
+  // to co wyżej tylko dla password
+  test("should be empty for passowrd input", () => {
+    render(<Login />);
+    const passwordInput = screen.getByPlaceholderText("password");
+    expect(passwordInput.value).toBe("");
+  });
 });
