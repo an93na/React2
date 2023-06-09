@@ -84,4 +84,17 @@ describe("Login component", () => {
     fireEvent.change(passwordElement, { target: { value: testValue } });
     expect(passwordElement.value).toBe(testValue);
   });
+
+  // testujemy żeby username i pasword miały jakies wartości, żeby
+  // button był aktywny
+  test("should be button activate when username and password have values", () => {
+    render(<Login />);
+    const buttonElement = screen.getByRole("button");
+    const usernameElement = screen.getByPlaceholderText("username");
+    const passwordElement = screen.getByPlaceholderText("password");
+    const testValue = "test";
+    fireEvent.change(usernameElement, { target: { value: testValue } });
+    fireEvent.change(passwordElement, { target: { value: testValue } });
+    expect(buttonElement).not.toBeDisabled();
+  });
 });
