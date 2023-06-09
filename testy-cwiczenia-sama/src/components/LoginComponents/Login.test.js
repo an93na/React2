@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import Login from "./Login";
 
 // co opisujemy
@@ -61,5 +61,19 @@ describe("Login component", () => {
     render(<Login />);
     const buttonElement = screen.getByRole("button");
     expect(buttonElement).toBeDisabled();
+  });
+
+  // sprawdzamy czy metoda onchange w input działa czy możemy coś pisać
+  test("should be username input change", () => {
+    render(<Login />);
+    const usernameElement = screen.getByPlaceholderText("username");
+    // tworzymy cos co może się pojawić podczas pisania
+    const testValue = "test";
+    // ten fireEvet.change coś zmienia ten usernameElement zostaje zmieniony
+    // na testValue
+    fireEvent.change(usernameElement, { target: { value: testValue } });
+    // oczekujemy zę usernameElement.value to będzie wartość, która będzie
+    // znajdować się w testValue
+    expect(usernameElement.value).toBe(testValue);
   });
 });
