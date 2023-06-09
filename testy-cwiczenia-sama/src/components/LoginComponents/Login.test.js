@@ -76,4 +76,12 @@ describe("Login component", () => {
     // znajdować się w testValue
     expect(usernameElement.value).toBe(testValue);
   });
+
+  test("should be password input change", () => {
+    render(<Login />);
+    const passwordElement = screen.getByPlaceholderText("password");
+    const testValue = "test";
+    fireEvent.change(passwordElement, { target: { value: testValue } });
+    expect(passwordElement.value).toBe(testValue);
+  });
 });
