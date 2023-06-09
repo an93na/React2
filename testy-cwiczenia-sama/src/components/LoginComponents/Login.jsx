@@ -39,7 +39,7 @@ const Login = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button onClick={handlerClick}>
+        <button  disabled={!username || !password} onClick={handlerClick}>
           {loading ? "Please Wait" : "Login"}
         </button>
         <span style={{ visibility: error ? "visible" : "hidden" }}>
