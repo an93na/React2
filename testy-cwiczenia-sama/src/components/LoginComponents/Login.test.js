@@ -55,4 +55,11 @@ describe("Login component", () => {
     const passwordInput = screen.getByPlaceholderText("password");
     expect(passwordInput.value).toBe("");
   });
+
+  // chcemy przetestować nasz przycisk aby był disable czyli nie aktywny
+  test("should be button dissable", () => {
+    render(<Login />);
+    const buttonElement = screen.getByRole("button");
+    expect(buttonElement).toBeDisabled();
+  });
 });
