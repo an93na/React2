@@ -86,7 +86,7 @@ describe("Login component", () => {
   });
 
   // testujemy żeby username i pasword miały jakies wartości, żeby
-  // button był aktywny
+  // wtedy button będzie aktywny
   test("should be button activate when username and password have values", () => {
     render(<Login />);
     const buttonElement = screen.getByRole("button");
