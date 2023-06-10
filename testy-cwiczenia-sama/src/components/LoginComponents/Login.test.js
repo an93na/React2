@@ -92,7 +92,7 @@ describe("Login component", () => {
     const buttonElement = screen.getByRole("button");
     const usernameElement = screen.getByPlaceholderText("username");
     const passwordElement = screen.getByPlaceholderText("password");
-    const testValue = "test";
+    const testValue = "testowac";
     fireEvent.change(usernameElement, { target: { value: testValue } });
     fireEvent.change(passwordElement, { target: { value: testValue } });
     expect(buttonElement).not.toBeDisabled();
