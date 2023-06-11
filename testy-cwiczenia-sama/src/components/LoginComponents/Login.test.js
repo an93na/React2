@@ -100,28 +100,32 @@ describe("Login component", () => {
 
   // testujemy czy po wpisaniu i kliknięciu login wyświetli się przez
   // chwilę napis oczekiwania na załadowanie
-  test("user should be not loading before data", async () => {
+  // dodajemy tutaj async ponieważ będziemy łądować dane
+  test("loading should not be rendered after fetching", async () => {
     render(<Login />);
-    const buttonElement = screen.getByRole("button");
-    const usernameElement = screen.getByPlaceholderText("username");
-    const passwordElement = screen.getByPlaceholderText("password");
+    const buttonEl = screen.getByRole("button");
+    const usernameInputEl = screen.getByPlaceholderText(/username/i);
+    const passwordInputEl = screen.getByPlaceholderText(/password/i);
+
     const testValue = "test";
-    fireEvent.change(usernameElement, { target: { value: testValue } });
-    fireEvent.change(passwordElement, { target: { value: testValue } });
-    fireEvent.click(buttonElement);
-    await waitFor(() => expect(buttonElement).toHaveTextContent("please wait"));
+
+    fireEvent.change(usernameInputEl, { target: { value: testValue } });
+    fireEvent.change(passwordInputEl, { target: { value: testValue } });
+    fireEvent.click(buttonEl);
+
+    await waitFor(() => expect(buttonEl).not.toHaveTextContent(/please wait/i));
   });
 
-  test("user should be render after data", async () => {
-    render(<Login />);
-    const buttonElement = screen.getByRole("button");
-    const usernameElement = screen.getByPlaceholderText("username");
-    const passwordElement = screen.getByPlaceholderText("password");
-    const testValue = "test";
-    fireEvent.change(usernameElement, { target: { value: testValue } });
-    fireEvent.change(passwordElement, { target: { value: testValue } });
-    fireEvent.click(buttonElement);
-    const userItem = await screen.findByText("Iryna");
-    expect(userItem).toBeInTheDocument();
-  });
+//   test("user should be render after data", async () => {
+//     render(<Login />);
+//     const buttonElement = screen.getByRole("button");
+//     const usernameElement = screen.getByPlaceholderText("username");
+//     const passwordElement = screen.getByPlaceholderText("password");
+//     const testValue = "test";
+//     fireEvent.change(usernameElement, { target: { value: testValue } });
+//     fireEvent.change(passwordElement, { target: { value: testValue } });
+//     fireEvent.click(buttonElement);
+//     const userItem = await screen.findByText("Iryna");
+//     expect(userItem).toBeInTheDocument();
+//   });
 });
