@@ -108,7 +108,7 @@ describe("Login component", () => {
     const testValue = "test";
     fireEvent.change(usernameElement, { target: { value: testValue } });
     fireEvent.change(passwordElement, { target: { value: testValue } });
-    fireEvent.click(buttonElement)
-    await waitFor(() => expect(buttonElement).toHaveTextContent('please wait'))
+    fireEvent.click(buttonElement);
+    await waitFor(() => expect(buttonElement).toHaveTextContent("please wait"));
   });
 });
