@@ -100,7 +100,7 @@ describe("Login component", () => {
 
   // testujemy czy po wpisaniu i kliknięciu login wyświetli się przez
   // chwilę napis oczekiwania na załadowanie
-  test("should be loading before data", async () => {
+  test("user should be not loading before data", async () => {
     render(<Login />);
     const buttonElement = screen.getByRole("button");
     const usernameElement = screen.getByPlaceholderText("username");
