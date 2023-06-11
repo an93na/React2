@@ -97,4 +97,8 @@ describe("Login component", () => {
     fireEvent.change(passwordElement, { target: { value: testValue } });
     expect(buttonElement).not.toBeDisabled();
   });
+
+  // testujemy czy po wpisaniu i kliknięciu login wyświetli się przez 
+  // chwilę napis oczekiwania na załadowanie
+  
 });
