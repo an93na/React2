@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import Login from "./Login";
 
 // co opisujemy
@@ -98,7 +98,17 @@ describe("Login component", () => {
     expect(buttonElement).not.toBeDisabled();
   });
 
-  // testujemy czy po wpisaniu i kliknięciu login wyświetli się przez 
+  // testujemy czy po wpisaniu i kliknięciu login wyświetli się przez
   // chwilę napis oczekiwania na załadowanie
-  
+  test("should be loading before data", async () => {
+    render(<Login />);
+    const buttonElement = screen.getByRole("button");
+    const usernameElement = screen.getByPlaceholderText("username");
+    const passwordElement = screen.getByPlaceholderText("password");
+    const testValue = "test";
+    fireEvent.change(usernameElement, { target: { value: testValue } });
+    fireEvent.change(passwordElement, { target: { value: testValue } });
+    fireEvent.click(buttonElement)
+    await waitFor(() => expect(buttonElement).toHaveTextContent('please wait'))
+  });
 });
