@@ -111,7 +111,7 @@ describe("Login component", () => {
     fireEvent.click(buttonElement);
     await waitFor(() => expect(buttonElement).toHaveTextContent("please wait"));
   });
-  
+
   test("user should be render after data", async () => {
     render(<Login />);
     const buttonElement = screen.getByRole("button");
@@ -121,9 +121,7 @@ describe("Login component", () => {
     fireEvent.change(usernameElement, { target: { value: testValue } });
     fireEvent.change(passwordElement, { target: { value: testValue } });
     fireEvent.click(buttonElement);
-    const userItem = await screen.findByText('Iryna')
-    expect(userItem).toBeInTheDocument()
-    
-    
+    const userItem = await screen.findByText("Iryna");
+    expect(userItem).toBeInTheDocument();
   });
 });
