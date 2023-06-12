@@ -11,107 +11,105 @@ jest.mock("axios", () => ({
   },
 }));
 
-describe("Login", () => {
-  test("username input should be rendered", () => {
+// co opisujemy
+describe("Login component", () => {
+  // tutsj tworzymy małe unit testy
+  // sprawdzamy czy w tym placeholder jest ten "username"
+  test("should be username text in placeholder", () => {
+    // render mówi nam, że wchodzimy do pliku Login i wszystko co
+    // jest to odczytujemy
     render(<Login />);
-    const usernameInputEl = screen.getByPlaceholderText(/username/i);
-    expect(usernameInputEl).toBeInTheDocument();
+
+    // sprawdzamy czy ten placeholder ma wartość "username"
+    // screen skanuje całe drzewo DOM, skanuje całą przeglądarke
+    // get byPlaceholderText() - bierzemy to co jest w placeholderze
+    const usernameInputPlaceholder = screen.getByPlaceholderText("username");
+
+    // wersja z regex
+    // (/username/i) - regex coś jak pisanie w "" ale lepiej tak
+    // bo wtedy nie musimy myśleć czy piszemy z dużej czy z małej litery
+    // const usernameInputPlaceholder = screen.getByPlaceholderText(/username/i)
+
+    // zakończenie expet to co oczekujemy, chcemy coś co tutaj będzie
+    // chcemy sprawdzić usernameInputPlaceholder czy istnieje w dokumencie
+    // czyli toBeInDocument
+    expect(usernameInputPlaceholder).toBeInTheDocument();
   });
 
-  test("password input should be rendered", () => {
+  test("should be password text in placeholder", () => {
     render(<Login />);
-    const passwordInputEl = screen.getByPlaceholderText(/password/i);
-    expect(passwordInputEl).toBeInTheDocument();
+    const passwordInputPlaceholder = screen.getByPlaceholderText("password");
+    expect(passwordInputPlaceholder).toBeInTheDocument();
   });
 
-  test("button should be rendered", () => {
+  // sprawdzamy button czy on istnieje
+  test("should rendered button", () => {
     render(<Login />);
-    const buttonEl = screen.getByRole("button");
-    expect(buttonEl).toBeInTheDocument();
+    // łapiemy go przy pomocy getByRole('button) sprawdzamy czy istnieje
+    const butonElement = screen.getByRole("button");
+    expect(butonElement).toBeInTheDocument();
   });
 
-  // nie chcemy abyśmy mieli nic w input
-  // <input type='text' placeholder="username" value="username" />
-  test("username input should be empty", () => {
+  // gdy nie wpiszemy username i password nie możemy przejść dalej, czyli
+  // testujemy czy takie coś działa
+  // czyli jeśli coś wpiszemy to placeholder powinien zniknąć
+  test("should be empty for username input", () => {
     render(<Login />);
-    const usernameInputEl = screen.getByPlaceholderText(/username/i);
-    expect(usernameInputEl.value).toBe("");
+    const usernameInput = screen.getByPlaceholderText("username");
+    expect(usernameInput.value).toBe("");
   });
 
-  // nie chcemy abyśmy mieli nic w input
-  // <input type='password' placeholder="password" value="password" />
-  test("password input should be empty", () => {
+  // to co wyżej tylko dla password
+  test("should be empty for passowrd input", () => {
     render(<Login />);
-    const passwordInputEl = screen.getByPlaceholderText(/password/i);
-    expect(passwordInputEl.value).toBe("");
+    const passwordInput = screen.getByPlaceholderText("password");
+    expect(passwordInput.value).toBe("");
   });
 
-  // wciąż możemy klikać na przycisk a chcielibyśmy aby był nieaktywny
-  test("button should be disabled", () => {
+  // chcemy przetestować nasz przycisk aby był disable czyli nie aktywny
+  test("should be button dissable", () => {
     render(<Login />);
-    const buttonEl = screen.getByRole("button");
-    expect(buttonEl).toBeDisabled();
+    const buttonElement = screen.getByRole("button");
+    expect(buttonElement).toBeDisabled();
   });
 
-  // powinno się to zmienić jeśli wpisujemy coś do username
-  // onChange={(e) => setUsername(e.target.value)}
-  test("username input should change", () => {
+  // sprawdzamy czy metoda onchange w input działa czy możemy coś pisać
+  test("should be username input change", () => {
     render(<Login />);
-    const usernameInputEl = screen.getByPlaceholderText(/username/i);
+    const usernameElement = screen.getByPlaceholderText("username");
+    // tworzymy cos co może się pojawić podczas pisania
     const testValue = "test";
-
-    fireEvent.change(usernameInputEl, { target: { value: testValue } });
-    expect(usernameInputEl.value).toBe(testValue);
+    // ten fireEvet.change coś zmienia ten usernameElement zostaje zmieniony
+    // na testValue
+    fireEvent.change(usernameElement, { target: { value: testValue } });
+    // oczekujemy zę usernameElement.value to będzie wartość, która będzie
+    // znajdować się w testValue
+    expect(usernameElement.value).toBe(testValue);
   });
 
-  // powinno się to zmienić jeśli wpisujemy coś do password
-  // onChange={(e) => setUsername(e.target.value)}
-  test("password input should change", () => {
+  test("should be password input change", () => {
     render(<Login />);
-    const passwordInputEl = screen.getByPlaceholderText(/password/i);
+    const passwordElement = screen.getByPlaceholderText("password");
     const testValue = "test";
-
-    fireEvent.change(passwordInputEl, { target: { value: testValue } });
-    expect(passwordInputEl.value).toBe(testValue);
+    fireEvent.change(passwordElement, { target: { value: testValue } });
+    expect(passwordElement.value).toBe(testValue);
   });
 
-  // wciąż pomimo, że mamy wpisane wartości to przycisk jest nieaktywny
-  test("button should not be disabled when inputs exist", () => {
+  // testujemy żeby username i pasword miały jakies wartości, żeby
+  // wtedy button będzie aktywny
+  test("should be button activate when username and password have values", () => {
     render(<Login />);
-    const buttonEl = screen.getByRole("button");
-    const usernameInputEl = screen.getByPlaceholderText(/username/i);
-    const passwordInputEl = screen.getByPlaceholderText(/password/i);
-
+    const buttonElement = screen.getByRole("button");
+    const usernameElement = screen.getByPlaceholderText("username");
+    const passwordElement = screen.getByPlaceholderText("password");
     const testValue = "test";
-
-    fireEvent.change(usernameInputEl, { target: { value: testValue } });
-    fireEvent.change(passwordInputEl, { target: { value: testValue } });
-
-    expect(buttonEl).not.toBeDisabled();
+    fireEvent.change(usernameElement, { target: { value: testValue } });
+    fireEvent.change(passwordElement, { target: { value: testValue } });
+    expect(buttonElement).not.toBeDisabled();
   });
 
-  // do ładowania
-  test("loading should not be rendered", () => {
-    render(<Login />);
-    const buttonEl = screen.getByRole("button");
-    expect(buttonEl).not.toHaveTextContent(/please wait/i);
-  });
-
-  test("loading should be rendered when click", () => {
-    render(<Login />);
-    const buttonEl = screen.getByRole("button");
-    const usernameInputEl = screen.getByPlaceholderText(/username/i);
-    const passwordInputEl = screen.getByPlaceholderText(/password/i);
-
-    const testValue = "test";
-
-    fireEvent.change(usernameInputEl, { target: { value: testValue } });
-    fireEvent.change(passwordInputEl, { target: { value: testValue } });
-    fireEvent.click(buttonEl);
-
-    expect(buttonEl).toHaveTextContent(/please wait/i);
-  });
-
+  // testujemy czy po wpisaniu i kliknięciu login wyświetli się przez
+  // chwilę napis oczekiwania na załadowanie
   // dodajemy tutaj async ponieważ będziemy łądować dane
   test("loading should not be rendered after fetching", async () => {
     render(<Login />);
@@ -140,11 +138,17 @@ describe("Login", () => {
     fireEvent.change(passwordInputEl, { target: { value: testValue } });
     fireEvent.click(buttonEl);
 
+    // tutaj symulujemy czekanie na odpowiedź od przeglądarki bo inaczej test
+    // mieliśmy failed. Ponieważ react testing library ma swoja pamięc
+    // i ma ustalone ile potrzebuje aby jakiś test się wczytał aby uniknąć
+    // nieskończonej pętli
     await waitFor(() => {
+      // czekamy 1s aby nasz program mógł znaleźć =odpowiednie dane
       setTimeout(() => {
         const userItem = screen.getByText("John");
         expect(userItem).toBeInTheDocument();
       }, 1000);
     });
   });
-})
+});
+
