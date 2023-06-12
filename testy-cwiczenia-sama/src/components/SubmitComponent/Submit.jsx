@@ -9,6 +9,7 @@ function Submit() {
   };
   return (
     <div className="Submit">
+        {submitted? <h1 id="submitted">Form Submitted</h1> : null}
       <form action="" onSubmit={handleSubmit}>
         <input
           type="text"
