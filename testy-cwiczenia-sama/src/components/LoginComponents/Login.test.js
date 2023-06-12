@@ -1,12 +1,19 @@
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import Login from "./Login";
 
+// jest automatycznie wbudowany w react mock mokowanie i my chcemy uzyskać
+// z niego chcemy uzyskać odpowiedź z axios budujemy fake funkcje co ma sie
+// wydarzyć
 jest.mock("axios", () => ({
+  // to jest na czym to jest budowane taki standard
   __esModule: true,
-
+  // co było użyte w Login.js w momencie pobotu informacji
   default: {
     get: () => ({
-      data: { id: 1, name: "John" },
+      // chcemy z naszych danych uzyskać, zasymulować name
+      // nie ma znaczenia co jest w '' ważne są te "klucze" czyli name, username
+      // itd
+      data: { name: "John", username: 'Cookie'},
     }),
   },
 }));
@@ -151,4 +158,3 @@ describe("Login component", () => {
     });
   });
 });
-
