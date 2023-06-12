@@ -116,16 +116,23 @@ describe("Login component", () => {
     await waitFor(() => expect(buttonEl).not.toHaveTextContent(/please wait/i));
   });
 
-//   test("user should be render after data", async () => {
-//     render(<Login />);
-//     const buttonElement = screen.getByRole("button");
-//     const usernameElement = screen.getByPlaceholderText("username");
-//     const passwordElement = screen.getByPlaceholderText("password");
-//     const testValue = "test";
-//     fireEvent.change(usernameElement, { target: { value: testValue } });
-//     fireEvent.change(passwordElement, { target: { value: testValue } });
-//     fireEvent.click(buttonElement);
-//     const userItem = await screen.findByText("Iryna");
-//     expect(userItem).toBeInTheDocument();
-//   });
+  test("user should be rendered after fetching", async () => {
+    render(<Login />);
+    const buttonEl = screen.getByRole("button");
+    const usernameInputEl = screen.getByPlaceholderText(/username/i);
+    const passwordInputEl = screen.getByPlaceholderText(/password/i);
+
+    const testValue = "test";
+
+    fireEvent.change(usernameInputEl, { target: { value: testValue } });
+    fireEvent.change(passwordInputEl, { target: { value: testValue } });
+    fireEvent.click(buttonEl);
+
+    await waitFor(() => {
+      setTimeout(() => {
+        const userItem = screen.getByText("John");
+        expect(userItem).toBeInTheDocument();
+      }, 1000);
+    });
+  });
 });
