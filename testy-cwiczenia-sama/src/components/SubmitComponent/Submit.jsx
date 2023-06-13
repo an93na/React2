@@ -12,6 +12,7 @@ function Submit() {
         {submitted? <h1 id="submitted">Form Submitted</h1> : null}
       <form action="" onSubmit={handleSubmit}>
         <input
+          required
           type="text"
           name="text"
           id="text"
