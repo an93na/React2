@@ -17,6 +17,8 @@ describe("Submit e2e", () => {
 it("should allows write text in the filed", () => {
   const fakeText = "Animals";
   cy.visit("http://localhost:3000/");
+  // sprawdzamy czy input ma wpisany fakeText
   cy.get("input#text").type(fakeText);
+  //  tutaj czy na pewno ma wpisaną wartość fakeText
   cy.get("input#text").should("have.value", fakeText);
 });
