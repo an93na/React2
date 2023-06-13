@@ -1,5 +1,6 @@
 //  tutaj na początek identyczna struktura jak w Login.test.js, języki
 // testowania mają podobną strukturę
+// e2e testy sprawdza wszytsko a unit testy pojedyńcze komponenty
 describe("Submit e2e", () => {
   //wcześniej zamiast it pisaliśmy test ale tutaj musi być it
   it("should chceck if the input and subbit button exist", () => {
@@ -12,4 +13,10 @@ describe("Submit e2e", () => {
     cy.get('button[type="submit"]').should("exist");
   });
 });
-// e2e testy sprawdza wszytsko a unit testy pojedyńcze komponenty
+
+it("should allows write text in the filed", () => {
+  const fakeText = "Animals";
+  cy.visit("http://localhost:3000/");
+  cy.get("input#text").type(fakeText);
+  cy.get("input#text").should("have.value", fakeText);
+});
