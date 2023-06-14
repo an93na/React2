@@ -37,6 +37,8 @@ describe("Submit e2e", () => {
     // chemy 2 dlatego dajemy to 1. Bo tutaj tak jak w tablicach
     // indeksujemy od zera
     cy.get("form").eq(1).submit();
-    
+    // sprawdzamy czy po naciśnięciu pojawił się napis Form Submitted
+    cy.get('h1#submitted').should('be.visible')
+
   });
 });
