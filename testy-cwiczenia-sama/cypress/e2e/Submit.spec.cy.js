@@ -28,5 +28,15 @@ describe("Submit e2e", () => {
   });
   //  w e2e nie testujemy wszystkiego tylko to co najważniejsze!
 
-  it("should submit form and show the text", () => {});
+  it("should submit form and show the text", () => {
+    // oczekujemy że w input coś będzie napisane, czy możemy coś napisać
+    const fakeText = "Animals";
+    cy.get("input#text").type(fakeText);
+    cy.get("input#text").should("have.value", fakeText);
+    // jakbyśmy napisali sam form to dostalibyśmy tylko 1 formularz a my
+    // chemy 2 dlatego dajemy to 1. Bo tutaj tak jak w tablicach
+    // indeksujemy od zera
+    cy.get("form").eq(1).submit();
+    
+  });
 });
