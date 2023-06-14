@@ -38,7 +38,8 @@ describe("Submit e2e", () => {
     // indeksujemy od zera
     cy.get("form").eq(1).submit();
     // sprawdzamy czy po naciśnięciu pojawił się napis Form Submitted
-    cy.get('h1#submitted').should('be.visible').and("contain","Form Submitted")
-
+    cy.get("h1#submitted")
+      .should("be.visible")
+      .and("contain", "Form Submitted");
   });
 });
