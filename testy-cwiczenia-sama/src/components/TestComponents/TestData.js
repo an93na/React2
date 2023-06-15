@@ -13,6 +13,9 @@ export const TestData = () => {
     return <div>
         <select name="" id="">
             <option value="" hidden>Wybiesz zdjęcie</option>
+            {photo.map((fot)=> {
+                return <option value={fot}>{fot}</option>
+            })}
         </select>
     </div>
 }
