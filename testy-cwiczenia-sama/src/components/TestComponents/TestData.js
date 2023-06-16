@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 export const TestData = () => {
   const [photo, setPhoto] = useState([]);
-  const [checked, setChecked] = useState('')
+  const [checked, setChecked] = useState("");
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/posts")
       .then((response) => response.json())
@@ -20,7 +20,6 @@ export const TestData = () => {
           return <option value={fot.id}>{fot.title}</option>;
         })}
       </select>
-        
     </div>
   );
 };

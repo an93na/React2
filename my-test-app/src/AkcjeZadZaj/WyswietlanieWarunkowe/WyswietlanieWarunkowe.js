@@ -18,5 +18,6 @@ export const WyswietlanieWarunkowe = () => {
         {checked === 'cmp1' && <Component1/>}
         {checked === 'cmp2' && <Component2/>}
         {checked === 'cmp3' && <Component3/>}
+
     </article>
 }
