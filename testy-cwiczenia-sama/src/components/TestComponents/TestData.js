@@ -17,9 +17,10 @@ export const TestData = () => {
           Wybiesz zdjęcie
         </option>
         {photo.map((fot) => {
-          return <option value={fot.id}>{fot.title}</option>;
+          return <option value={fot.id} key={fot.id}>{fot.title}</option>;
         })}
       </select>
+      {console.log(checked)}
     </div>
   );
 };
