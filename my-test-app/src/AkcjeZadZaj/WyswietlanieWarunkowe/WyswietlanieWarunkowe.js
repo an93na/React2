@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Component1 } from "./Component1";
 import { Component2 } from "./Component2";
 import { Component3 } from "./Component3";
+import { Component4 } from "./Component4";
 
 export const WyswietlanieWarunkowe = () => {
   const [checked, setChecked] = useState(false);
@@ -20,10 +21,12 @@ export const WyswietlanieWarunkowe = () => {
         <option value="cmp1">Component 1</option>
         <option value="cmp2">Component 2</option>
         <option value="cmp3">Component 3</option>
+        <option value="cmp4">Component 4</option>
       </select>
       {checked === "cmp1" && <Component1 />}
       {checked === "cmp2" && <Component2 />}
       {checked === "cmp3" && <Component3 />}
+      {checked === "cmp4" && <Component4 />}
     </article>
   );
 };
