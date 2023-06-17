@@ -20,7 +20,7 @@ export const TestData = () => {
           return <option value={fot.url} key={fot.id}>{fot.title}</option>;
         })}
       </select>
-      
+      {console.log(checked)}
     </div>
   );
 };
