@@ -17,7 +17,7 @@ export const TestData = () => {
           Wybiesz zdjęcie
         </option>
         {photo.map((fot) => {
-          return <option value={fot.url} key={fot.id}>{fot.title}</option>;
+          return <option value={fot.url}>{fot.title}</option>;
         })}
       </select>
       {console.log(checked)}
