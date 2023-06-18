@@ -6,7 +6,7 @@ export const Component4 = () => {
       style={{
         width: 100,
         height: 100,
-        backgroundColor: "blue",
+        backgroundColor: "yellow",
         textAlign: "center",
         alignItems: "center",
         borderRadius: "50px",
